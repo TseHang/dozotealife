@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 // 使用 HtmlWebpackPlugin，將 bundle 好得 <script> 插入到 body
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -9,12 +10,13 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-  entry: [
-    './frontend/index.js',
-  ],
+  entry: {
+    main: './frontend/index.js',
+  },
   output: {
     path: `${__dirname}/dist`,
-    filename: 'index_bundle.js',
+    filename: 'index.bundle.js',
+    chunkFilename: '[name].bundle.js',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -24,6 +26,7 @@ module.exports = {
     port: process.env.PORT || 8080,
     inline: true,
     hot: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -46,8 +49,38 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimizer: [
+      // we specify a custom UglifyJsPlugin here to get source maps in production
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          compress: false,
+          ecma: 6,
+          mangle: true,
+        },
+        sourceMap: true,
+      }),
+    ],
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
   plugins: [
     HTMLWebpackPluginConfig,
     new webpack.HotModuleReplacementPlugin(),
+
+    // ensure that we get a production build of any dependencies
+    // this is primarily for React, where this removes 179KB from the bundle
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"',
+    }),
   ],
 };
