@@ -1,9 +1,10 @@
 .DS_Store
 .vscode
 .cache
-node_modules
+
 npm-debug.log
 yarn-error.log
-
-build
 package-lock.json
+
+node_modules
+assets
