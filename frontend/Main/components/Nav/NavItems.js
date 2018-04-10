@@ -12,6 +12,9 @@ const Block = styled.div`
   margin-left: auto;
 `;
 
+/**
+ * render NavItems
+ */
 const renderNavItems = () => navConfig.map(({ to, tagName }) =>
   <NavItem key={tagName} text={tagName} to={to} />
 );

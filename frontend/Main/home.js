@@ -5,7 +5,7 @@ import FullImageBlock from './components/Block/FullImgBlock';
 import IndexNav from './components/Nav/IndexNav';
 import { renderNavItems } from './components/Nav/NavItems';
 
-import bg from './assets/img/bg.jpg';
+import bg from '../assets/img/bg.jpg';
 
 const NavItemsBlock = styled.div`
   position: absolute;
@@ -55,15 +55,16 @@ class Home extends PureComponent {
       <main>
         <FullImageBlock src={bg}>
           <NavItemsBlock
-            innerRef={(node) => {
-              // this callback executes before componentDidMount
-              if (node !== null) { this.nav = node; }
-            }}
+            // this callback executes before componentDidMount
+            innerRef={(node) => { if (node !== null) { this.nav = node; } }}
           >
             {renderNavItems()}
           </NavItemsBlock>
           <IndexNav />
         </FullImageBlock>
+        <div style={{ height: '100vh', width: '100%' }}>
+           123
+        </div>
       </main>
     );
   }

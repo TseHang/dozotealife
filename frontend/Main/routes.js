@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import theme from './style/theme';
+import theme from '../style/theme';
 
 import Home from './home';
 import Health from './health';
+import Footer from './components/Footer';
 
 // Import CSS reset and Global Styles
-import './style/global-style';
+import '../style/global-style';
 
 const NoMatch = () => <div>NoMatch</div>;
-const Footer = () => <footer style={{ height: '100vh' }}>footer</footer>;
 const Know = () => <div>Know</div>;
 
 const root = (

@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 // 使用 HtmlWebpackPlugin，將 bundle 好得 <script> 插入到 body
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -13,12 +14,20 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   },
 });
 
+// Image min
+const ImageminPluginConfig = new ImageminPlugin({
+  disable: process.env.NODE_ENV !== 'production',
+  pngquant: {
+    quality: '95-100',
+  },
+});
+
 const { NODE_ENV } = process.env;
 const env = NODE_ENV || 'development';
 
 module.exports = {
   entry: {
-    main: './frontend/index.js',
+    main: './frontend/Main/routes.js',
   },
   output: {
     path: `${__dirname}/dist`,
@@ -94,7 +103,6 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      // we specify a custom UglifyJsPlugin here to get source maps in production
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
@@ -118,6 +126,7 @@ module.exports = {
   },
   plugins: [
     HTMLWebpackPluginConfig,
+    ImageminPluginConfig,
     new webpack.HotModuleReplacementPlugin(),
 
     // ensure that we get a production build of any dependencies

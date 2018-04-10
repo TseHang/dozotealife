@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import DefaultNavWrapper from './components/NavWrapper';
 
-import logo from '../../assets/img/nav-logo.png';
-import rope from '../../assets/img/rope-icon.png';
+import logo from '../../../assets/img/nav-logo.png';
+import rope from '../../../assets/img/rope-icon.png';
 
 const LinkWithFilter = styled(NavLink)`
   transition: filter .2s ease-out;
