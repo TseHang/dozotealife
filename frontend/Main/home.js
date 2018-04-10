@@ -54,13 +54,13 @@ class Home extends PureComponent {
     return (
       <main>
         <FullImageBlock src={bg}>
+          <IndexNav />
           <NavItemsBlock
             // this callback executes before componentDidMount
             innerRef={(node) => { if (node !== null) { this.nav = node; } }}
           >
             {renderNavItems()}
           </NavItemsBlock>
-          <IndexNav />
         </FullImageBlock>
         <div style={{ height: '100vh', width: '100%' }}>
            123
