@@ -11,13 +11,16 @@ import Footer from './components/Footer';
 // Import CSS reset and Global Styles
 import '../style/global-style';
 
-const NoMatch = () => <div>NoMatch</div>;
+const Nav = () => <div>Nav</div>;
 const Know = () => <div>Know</div>;
 
+const NoMatch = () => <div><h1>What are you fucking doing!!!</h1></div>;
+
 const root = (
-  <Router basename="/">
+  <Router>
     <ThemeProvider theme={theme}>
       <div style={{ position: 'relative' }}>
+        <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/health" component={Health} />

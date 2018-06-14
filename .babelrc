@@ -12,11 +12,13 @@
     "react",
     "stage-2"
   ],
-  "env": {
-    "development": {
-      "plugins": [
-        "styled-components"
-      ]
-    }
-  }
+  "plugins": [
+    "transform-async-to-generator",
+    "styled-components",
+    ["module-resolver", {
+      "alias": {
+        "@": "./frontend/Main"
+      }
+    }]
+  ]
 }

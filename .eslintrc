@@ -1,1 +1,14 @@
-{ "extends": "@17media/eslint-config-17media/browser" }
+{ 
+  "parser": "babel-eslint",
+  "extends": "@17media/eslint-config-17media/browser",
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "jest": true
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  }
+}

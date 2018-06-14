@@ -21,13 +21,12 @@ injectGlobal`
     font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif;
   }
 
-  html[lang=ja] {
-    font-family: "Hiragino Kaku Gothic Pro", Osaka, Meiryo, "MS PGothic", Arial, sans-serif;
-  }
-
   html {
     line-height: 1.15; /* Correct the line height in all browsers. */
     -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. */
+    &[lang=ja] {
+      font-family: "Hiragino Kaku Gothic Pro", Osaka, Meiryo, "MS PGothic", Arial, sans-serif;
+    }
   }
 
   body {
