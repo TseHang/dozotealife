@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Home from '@/containers/Index';
+import Home from '@/containers/Home';
 
 const NoMatch = () => <div><h1>What are you fucking doing!!!</h1></div>;
 

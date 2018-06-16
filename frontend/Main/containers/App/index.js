@@ -7,11 +7,15 @@ import Nav from '@/components/Nav';
 class App extends Component {
   state={}
 
+  renderBody() {
+    return this.props.children;
+  }
+
   render() {
     return (
       <Fragment>
         <Nav />
-        {this.props.children}
+        {this.renderBody()}
         <Footer />
       </Fragment>
     );
