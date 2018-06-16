@@ -1,5 +1,5 @@
 import TabNav from './TabNav';
-import AnimNav from './AnimNav';
+import AnimNav from './IndexNav';
 
 /* [Notice]: 因為是 hashRouter, 所以取 hash 做比較，到時候要改。 */
 // const isHome = window.location.hash === '#/';

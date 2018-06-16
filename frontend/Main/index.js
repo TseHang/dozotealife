@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import { Router } from 'react-router-dom';
 
-import App from '@/components/App';
+import App from '@/containers/App';
 import history from '@/providers/history';
 import routes from '@/routes';
 

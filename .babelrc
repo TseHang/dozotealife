@@ -17,6 +17,7 @@
     "styled-components",
     ["module-resolver", {
       "alias": {
+        "~": "./frontend/",
         "@": "./frontend/Main"
       }
     }]

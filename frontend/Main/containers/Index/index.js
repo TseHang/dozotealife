@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
-import FullImageBlock from './components/Block/FullImgBlock';
-import IndexNav from './components/Nav/IndexNav';
-import { renderNavItems } from './components/Nav/NavItems';
+import FullImageBlock from '@/components/Block/FullImgBlock';
+import IndexNav from '@/components/Nav/IndexNav';
+import { renderNavItems } from '@/components/Nav/NavItems';
 
-import bg from '../assets/img/bg.jpg';
+import bg from '~/assets/img/bg.jpg';
 
 const NavItemsBlock = styled.div`
   position: absolute;
