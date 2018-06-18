@@ -30,7 +30,8 @@ injectGlobal`
   }
 
   body {
-    background-color: '#F4F3F4';
+    background-color: #F4F3F4;
+    letter-spacing: 1px;
   }
 
   h1{
