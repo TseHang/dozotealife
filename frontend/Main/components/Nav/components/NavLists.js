@@ -3,7 +3,7 @@ import { bool, func } from 'prop-types';
 import styled from 'styled-components';
 import { Link, withRouter } from 'react-router-dom';
 
-import { fromProps } from '~/style/helper';
+import { fromProps, media } from '~/style/helper';
 import { Row as raw, Block as block } from '~/components/Grid/Grid';
 
 import closeIcon from '~/assets/Icon/close.svg';
@@ -47,13 +47,14 @@ const HomeLogo = styled.img`
 
 const CuteImg = styled.img`
   width: 50%;
-  @media (max-width: 720px) {
+  ${media('pad')} {
     display: none;
   }
 `;
 
 const Block = styled(block)`
   justify-content: space-around;
+  align-items: flex-start;
 `;
 
 const NavLink = {
@@ -85,7 +86,7 @@ const NavLists = ({
     </Row>
     <Row color="orange" height="88vh" justify="flex-end">
       <CuteImg alt="cute-img" />
-      <Block center>
+      <Block>
         {
           navConfigs.map(nav => (
             <Link to={nav.path} onClick={onClose} key={nav.path}>

@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { breakpoints } from './theme';
 
 /**
  * @param {string} path
@@ -17,4 +18,12 @@ export const fromProps = propsName =>
     const propValue = _.get(props, propsName);
     return _.get(props, `theme.${propsName}.${propValue}`, propValue);
   };
+
+/**
+ * @param {string} threshold
+ */
+export const media = (threshold, displayWay = 'max') => {
+  const breakpoint = `${breakpoints[threshold]}px`;
+  return `@media (${displayWay}-width: ${breakpoint})`;
+};
 

@@ -1,3 +1,9 @@
+export const breakpoints = {
+  mobile: '400',
+  pad: '768',
+  desktop: '992',
+};
+
 export default {
   color: {
     green: '#2B4A27',
