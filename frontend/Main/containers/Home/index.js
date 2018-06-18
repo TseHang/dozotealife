@@ -1,5 +1,5 @@
 import React from 'react';
-import TitleBar from './components/TitleBar';
+import TitleBar from '@/components/PageTop';
 
 // import FullImageBlock from '@/components/Block/FullImgBlock';
 // import bg from '~/assets/img/bg.jpg';
