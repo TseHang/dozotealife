@@ -1,20 +1,15 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+import TitleBar from './components/TitleBar';
 
 // import FullImageBlock from '@/components/Block/FullImgBlock';
 // import bg from '~/assets/img/bg.jpg';
 
-class Home extends PureComponent {
-  state = {}
-
-  render() {
-    return (
-      <main>
-        <div style={{ height: '100vh', width: '100%' }}>
-           123
-        </div>
-      </main>
-    );
-  }
-}
+const Home = () => (
+  <React.Fragment>
+    <TitleBar subTitle />
+    {/* <Slider /> */}
+    {/* <TitleBar subTitle /> */}
+  </React.Fragment>
+);
 
 export default Home;

@@ -76,7 +76,7 @@ const NavLists = ({
   open,
   onClose,
 }) => (
-  // TODO： 出現的動畫
+  // TODO： 出現的動畫(時間差)
   <Wrapper open={open} color="orange">
     <Row color="white" height="12vh" justify="space-between" inline>
       <CloseIcon onClick={onClose} src={closeIcon} />
