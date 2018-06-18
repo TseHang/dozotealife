@@ -9,6 +9,8 @@ import { Row as raw, Block as block } from '~/components/Grid/Grid';
 import closeIcon from '~/assets/Icon/close.svg';
 import logoWithTitle from '~/assets/Logo/logoWithTitle.png';
 
+import { navConfigs } from '../config';
+
 const Wrapper = styled.div`
   position: absolute;
   width: 100vw;
@@ -52,7 +54,6 @@ const CuteImg = styled.img`
 
 const Block = styled(block)`
   justify-content: space-around;
-  align-items: flex-end;
 `;
 
 const NavLink = {
@@ -85,26 +86,14 @@ const NavLists = ({
     <Row color="orange" height="88vh" justify="flex-end">
       <CuteImg alt="cute-img" />
       <Block center>
-        <Link to="/story" onClick={onClose}>
-          <NavLink.Label>故事</NavLink.Label>
-          <NavLink.Text>一杯溫暖的茶，一段有溫度的時間</NavLink.Text>
-        </Link>
-        <Link to="/promise" onClick={onClose}>
-          <NavLink.Label>故事</NavLink.Label>
-          <NavLink.Text>一杯溫暖的茶，一段有溫度的時間</NavLink.Text>
-        </Link>
-        <Link to="/product" onClick={onClose}>
-          <NavLink.Label>故事</NavLink.Label>
-          <NavLink.Text>一杯溫暖的茶，一段有溫度的時間</NavLink.Text>
-        </Link>
-        <Link to="/know-how" onClick={onClose}>
-          <NavLink.Label>故事</NavLink.Label>
-          <NavLink.Text>一杯溫暖的茶，一段有溫度的時間</NavLink.Text>
-        </Link>
-        <Link to="/about-us">
-          <NavLink.Label>故事</NavLink.Label>
-          <NavLink.Text>一杯溫暖的茶，一段有溫度的時間</NavLink.Text>
-        </Link>
+        {
+          navConfigs.map(nav => (
+            <Link to={nav.path} onClick={onClose} key={nav.path}>
+              <NavLink.Label>{nav.label}</NavLink.Label>
+              <NavLink.Text>{nav.text}</NavLink.Text>
+            </Link>
+          ))
+        }
       </Block>
     </Row>
   </Wrapper>
