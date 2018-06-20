@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { bool, string } from 'prop-types';
 
+import { getTheme } from '~/style/helper';
 import { Row as row } from '~/components/Grid/Grid';
 
 import subLogo from '~/assets/Logo/subLogo.svg';
@@ -9,18 +10,26 @@ import logoBg from '~/assets/Logo/logoBg.png';
 import logoRow from '~/assets/Logo/logo-row.png';
 
 const Row = styled(row)`
-  padding-top: 2%;
+  height: 12vh;
+  max-height: 90px;
 `;
 
 const Title = {
   Container: styled.div`
     position: relative;
+    top: 4%;
     left: 50%;
     transform: translateX(-50%);
   `,
 
   Text: styled.p`
-    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: ${getTheme('color.green')};
   `,
 
   Bg: styled.img`
@@ -43,23 +52,24 @@ const SubTitle = styled.img`
 `;
 
 
-const TitleBar = ({
-  subTitle,
+const getComponent = title => (title ? <Title.Text>{title}</Title.Text> : <Title.Logo src={logoRow} />);
+
+const PageTop = ({
   title,
+  subTitle,
 }) => (
   <Row inline>
     <Title.Container>
       <Title.Bg src={logoBg} />
-      {/* <Title.Text>最新消息</Title.Text> */}
-      <Title.Logo src={logoRow} />
+      {getComponent(title)}
     </Title.Container>
-    <SubTitle src={subLogo} />
+    {subTitle && <SubTitle src={subLogo} />}
   </Row>
 );
 
-TitleBar.propTypes = {
+PageTop.propTypes = {
   subTitle: bool,
   title: string,
 };
 
-export default TitleBar;
+export default PageTop;

@@ -11,7 +11,7 @@ import logoWithTitle from '~/assets/Logo/logoWithTitle.png';
 
 import { navConfigs } from '../config';
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -20,6 +20,7 @@ const Wrapper = styled.div`
   background-color: ${fromProps('color')};
   transition: all .2s ease-in;
   color: #fff;
+  z-index: 1000;
 `;
 
 const Row = styled(raw)`

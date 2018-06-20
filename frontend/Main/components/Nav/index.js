@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import styled from 'styled-components';
 
 import { getTheme } from '~/style/helper';
@@ -6,14 +6,11 @@ import IconBar from './components/IconBar';
 import NavLists from './components/NavLists';
 
 const Wrapper = styled.nav`
+  cursor: pointer;
   position: fixed;
   padding-top: ${getTheme('layout.top')};
   padding-left: ${getTheme('layout.left')};
-`;
-
-const IconContainer = styled.div`
-  cursor: pointer;
-  width: 6vh;
+  width: 10vh;
   max-width: 80px;
   &:hover {
     ${IconBar} {
@@ -38,17 +35,17 @@ class Nav extends PureComponent {
 
   render() {
     return (
-      <Wrapper>
-        <IconContainer onClick={this.openNavLists}>
+      <Fragment>
+        <Wrapper onClick={this.openNavLists}>
           <IconBar color="orange" />
           <IconBar color="orange" />
           <IconBar color="orange" className="short" />
-        </IconContainer>
+        </Wrapper>
         <NavLists
           open={this.state.open}
           onClose={this.closeNavLists}
         />
-      </Wrapper>
+      </Fragment>
     );
   }
 }

@@ -1,12 +1,12 @@
 import React from 'react';
-import TitleBar from '@/components/PageTop';
+import PageTop from '@/components/PageTop';
 
 // import FullImageBlock from '@/components/Block/FullImgBlock';
 // import bg from '~/assets/img/bg.jpg';
 
 const Home = () => (
   <React.Fragment>
-    <TitleBar subTitle />
+    <PageTop subTitle />
     {/* <Slider /> */}
     {/* <TitleBar subTitle /> */}
   </React.Fragment>
