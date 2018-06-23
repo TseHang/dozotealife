@@ -12,7 +12,7 @@ import logoWithTitle from '~/assets/Logo/logoWithTitle.png';
 import { navConfigs } from '../config';
 
 const Wrapper = styled.nav`
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   top: 0;

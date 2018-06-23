@@ -12,6 +12,7 @@ const Wrapper = styled.nav`
   padding-left: ${getTheme('layout.left')};
   width: 10vh;
   max-width: 80px;
+  z-index: 1000;
   &:hover {
     ${IconBar} {
       &:nth-child(1) {
