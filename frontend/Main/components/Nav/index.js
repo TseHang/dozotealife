@@ -1,7 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
 import styled from 'styled-components';
 
-import { getTheme } from '~/style/helper';
+import { getTheme, media } from '~/style/helper';
 import IconBar from './components/IconBar';
 import NavLists from './components/NavLists';
 
@@ -24,6 +24,10 @@ const Wrapper = styled.nav`
         width: 100%;
       }
     }
+  }
+
+  ${media('pad')} {
+    width: 8vh;
   }
 `;
 

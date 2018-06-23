@@ -8,7 +8,7 @@ injectGlobal`
   a, img,
   ol, ul, li,
   form, label, input, textarea,
-  header, footer, nav {
+  header, footer, nav, figure {
     margin: 0;
     padding: 0;
     border: 0;
@@ -30,7 +30,7 @@ injectGlobal`
   }
 
   body {
-    background-color: #F4F3F4;
+    background-color: #fff;
     letter-spacing: 1px;
   }
 

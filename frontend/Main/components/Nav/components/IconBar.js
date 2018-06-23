@@ -4,7 +4,7 @@ import { fromProps } from '~/style/helper';
 export default styled.div`
   width: 85%;
   height: 3px;
-  margin-bottom: 5px;
+  margin-bottom: .35rem;
   background-color: ${fromProps('color')};
   transition: width .15s ease-in;
 

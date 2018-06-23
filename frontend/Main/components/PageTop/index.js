@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { bool, string } from 'prop-types';
 
-import { getTheme } from '~/style/helper';
+import { getTheme, media } from '~/style/helper';
 import { Row as row } from '~/components/Grid/Grid';
 
 import subLogo from '~/assets/Logo/subLogo.svg';
@@ -12,6 +12,7 @@ import logoRow from '~/assets/Logo/logo-row.png';
 const Row = styled(row)`
   height: 12vh;
   max-height: 90px;
+  flex-wrap: nowrap;
 `;
 
 const Title = {
@@ -43,12 +44,20 @@ const Title = {
     left: 50%;
     transform: translateX(-50%);
     width: 10vw;
+
+    ${media('pad')} {
+      width: 24vw;
+    }
   `,
 };
 
 const SubTitle = styled.img`
   margin-left: auto;
   width: 17vw;
+
+  ${media('pad')} {
+    display: none;
+  }
 `;
 
 

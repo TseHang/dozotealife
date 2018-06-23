@@ -13,14 +13,15 @@ export const getTheme = (path, defaultValue) =>
  * @param {string} path
  * @param {any} defaultValue
  */
-export const fromProps = propsName =>
+export const fromProps = (propsName, defaultValue) =>
   (props) => {
-    const propValue = _.get(props, propsName);
+    const propValue = _.get(props, propsName, defaultValue);
     return _.get(props, `theme.${propsName}.${propValue}`, propValue);
   };
 
 /**
  * @param {string} threshold
+ * @param {string} displayWay 'max' or 'min'
  */
 export const media = (threshold, displayWay = 'max') => {
   const breakpoint = `${breakpoints[threshold]}px`;
