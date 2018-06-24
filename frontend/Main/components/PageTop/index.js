@@ -13,6 +13,7 @@ const Row = styled(row)`
   height: 12vh;
   max-height: 90px;
   flex-wrap: nowrap;
+  margin-bottom: 2vh;
 `;
 
 const Title = {

@@ -5,11 +5,16 @@ import { Row as row } from '~/components/Grid/Grid';
 import fullImg from '~/components/Block/FullImg';
 
 import { media } from '~/style/helper';
-import bg from '~/assets/img/bg.jpg';
-import bg2 from '~/assets/img/bg2.jpg';
-import bg3 from '~/assets/img/bg3.jpg';
+import slideImg1 from '~/assets/img/slide-1.png';
+import slideImg2 from '~/assets/img/slide-2.jpg';
+import slideImg3 from '~/assets/img/slide-3.jpg';
+import slideImg4 from '~/assets/img/slide-4.jpg';
+
+import { i18nString } from '@/i18n';
 
 import Description from './SliderDescription';
+
+const slidesString = i18nString('slides');
 
 const slideIn = keyframes`
   from {
@@ -23,15 +28,19 @@ const slideIn = keyframes`
 `;
 
 const Row = styled(row)`
+  padding: 0 2%;
   ${media('pad')} {
     margin: 0;
+    padding: 0;
   }
 `;
 
 const Figure = styled.figure`
   position: relative;
   width: 100%;
-  height: 85vh;
+  height: 82vh;
+  filter: ${props => (props.loading ? 'blur(5px)' : 'none')};
+  /* filter: blur(5px); */
   ${media('pad')} {
     height: 30vh;
   }
@@ -47,7 +56,7 @@ const FullImg = styled(fullImg)`
     return '-1';
   }};
   animation: ${(props) => {
-    if (props.active) return `${slideIn} .8s ease-out`;
+    if (props.active) return `${slideIn} .8s cubic-bezier(.92,.19,.75,.71)`;
     return 'none';
   }};
 `;
@@ -69,50 +78,52 @@ const Dot = styled.div`
   width: .7rem;
   height: .7rem;
   border-radius: 50%;
-  background-color: #ffffff80;
+  background-color: ${props => (props.active ? '#fff' : '#ffffff80')};
   &:hover {
     background-color: #fff;
   }
 `;
 
-const slides = [
-  {
-    key: '對飲喝茶',
-    src: bg,
-    description: {
-      title: 'title',
-    },
+const slides = [slideImg1, slideImg2, slideImg3, slideImg4].map((src, idx) => ({
+  src,
+  description: {
+    title: slidesString(idx).title,
+    text: slidesString(idx).text,
   },
-  {
-    key: '對飲喝',
-    src: bg2,
-    description: {
-      title: 'title',
-    },
-  },
-  {
-    key: '對飲',
-    src: bg3,
-    description: {
-      title: 'title',
-    },
-  },
-];
-
+}));
 
 class Slider extends PureComponent {
   state = {
     lastSlideIdx: 0,
     activeSlideIdx: 0,
-    description: 1,
+    description: slides[0].description,
+    loading: true,
   }
 
-  componentDidMount() {
-    this.timer = setTimeout(this.slide, 3000);
+  componentDidMount = () => {
+    this.setState({ loading: true });
+    this.loading();
   }
 
   componentWillUnmount() {
     clearTimeout(this.timer);
+  }
+
+  onLoadWithSlidesImage = () => {
+    this.timer = setTimeout(this.slide, 5000);
+    this.setState({ loading: false });
+  }
+
+  loading = () => {
+    this.image.src = slides[0].src;
+    if (this.image.complete) {
+      this.onLoadWithSlidesImage();
+    } else {
+      // [Bug]: why 'loadend' event trigger not working?
+      this.image.addEventListener('load', () => {
+        setTimeout(this.onLoadWithSlidesImage, 500);
+      });
+    }
   }
 
   slide = () => {
@@ -122,7 +133,7 @@ class Slider extends PureComponent {
     if (next > max) next = 0;
 
     this.setState(
-      { activeSlideIdx: next, lastSlideIdx: current },
+      { activeSlideIdx: next, lastSlideIdx: current, description: slides[next].description },
       () => { this.timer = setTimeout(this.slide, 5000); },
     );
   }
@@ -131,18 +142,19 @@ class Slider extends PureComponent {
     const current = this.state.activeSlideIdx;
     clearTimeout(this.timer);
     this.setState(
-      { activeSlideIdx: activeIdx, lastSlideIdx: current },
-      () => { this.timer = setTimeout(this.slide, 8000); }, // 因為是自己選看的，所以讓使用者看比較久
+      { activeSlideIdx: activeIdx, lastSlideIdx: current, description: slides[activeIdx].description },
+      // () => { this.timer = setTimeout(this.slide, 8000); }, // Cuz it's chosen by user, so the timer is longer
     );
   }
 
   timer = 0;
+  image = new Image();
 
   renderSlideImg() {
     const { activeSlideIdx, lastSlideIdx } = this.state;
-    return slides.map(({ key, src }, idx) => (
+    return slides.map(({ src }, idx) => (
       <FullImg
-        key={key}
+        key={idx}
         src={src}
         height={'100%'}
         active={idx === activeSlideIdx}
@@ -151,19 +163,22 @@ class Slider extends PureComponent {
     ));
   }
 
+  renderDots() {
+    const { activeSlideIdx } = this.state;
+    return slides.map((el, idx) => <Dot key={`dot-${idx}`} onClick={this.selectSlide(idx)} active={idx === activeSlideIdx} />);
+  }
+
   render() {
-    const { description } = this.state;
+    const { description, loading, activeSlideIdx } = this.state;
     return (
       <Row>
-        <Figure>
+        <Figure loading={loading} >
           {this.renderSlideImg()}
           <DotRow>
-            <Dot onClick={this.selectSlide(0)} />
-            <Dot onClick={this.selectSlide(1)} />
-            <Dot onClick={this.selectSlide(2)} />
+            {this.renderDots()}
           </DotRow>
+          <Description description={description} slideKey={activeSlideIdx} />
         </Figure>
-        <Description description={description} />
       </Row>
     );
   }

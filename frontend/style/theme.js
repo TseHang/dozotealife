@@ -9,6 +9,7 @@ export default {
     green: '#2B4A27',
     orange: '#EB6624',
     white: '#fff',
+    black: '#333',
     navBgGray: 'rgb(211, 215, 222)',
     lightGreen: 'rgb(208, 216, 200)',
   },

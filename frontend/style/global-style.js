@@ -19,6 +19,7 @@ injectGlobal`
   html, input, button, select {
     font-size: 16px;
     font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif;
+    font-weight: 300;
   }
 
   html {

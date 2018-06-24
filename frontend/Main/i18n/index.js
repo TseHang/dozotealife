@@ -21,3 +21,15 @@ function getString(key, defaultLang = DEFAULT_LANG) {
 
 export const i18nString = category =>
   path => getString(`${category}.${path}`, 'zh-tw');
+
+/**
+ * @param { string } i18n - string, function, object
+ * @param { parameter } 參數，想放幾個放幾個
+ */
+export const showI18n = (i18n, ...para) => {
+  if (_.isString(i18n)) return i18n;
+  else if (_.isFunction(i18n)) return i18n(...para);
+
+  throw new Error('i18n string format wrong!');
+};
+

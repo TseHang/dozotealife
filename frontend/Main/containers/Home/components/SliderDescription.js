@@ -1,38 +1,56 @@
 import React from 'react';
 import styled from 'styled-components';
-import { string, shape } from 'prop-types';
+import { number, shape, string, func, oneOfType } from 'prop-types';
 
-const Container = styled.div`
+import { media, fromProps } from '~/style/helper';
+import { showI18n } from '@/i18n';
+
+const Container = styled.figcaption`
+  position: absolute;
+  left: ${fromProps('left')};
+  top: ${fromProps('top')};
+
+  color: ${fromProps('color')};
+  z-index: 1;
+
+  ${media('pad')} {
+    position: static;
+  }
 `;
 
-const Title = styled.h2`
-`;
+const Title = styled.h2``;
 
 const Text = styled.p`
+  margin-top: 5px;
+  padding-left: 5px;
 `;
 
 const transformPosition = (key) => {
   switch (key) {
+    case 0: return { left: '60%', top: '85%', color: 'white' };
+    case 1: return { left: '5%', top: '27%', color: 'white' };
+    case 2: return { left: '65%', top: '23%', color: 'black' };
+    case 3: return { left: '5%', top: '20%', color: 'black' };
     default:
-      return { left: '10px', top: '' };
+      return { left: '5%', top: '20%', color: 'white' };
   }
 };
 
 const SliderDescription = ({
-  imgKey,
+  slideKey,
   description,
 }) => (
-  <Container {...transformPosition(imgKey)}>
-    <Title>Title{description.title}</Title>
-    <Text>Text{description.text}</Text>
+  <Container {...transformPosition(slideKey, description)}>
+    <Title>{description.title}</Title>
+    <Text>{showI18n(description.text)}</Text>
   </Container>
 );
 
 SliderDescription.propTypes = {
-  imgKey: string,
+  slideKey: number,
   description: shape({
     title: string,
-    text: string,
+    text: oneOfType([string, func]),
   }),
 };
 

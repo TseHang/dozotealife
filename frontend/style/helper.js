@@ -15,8 +15,8 @@ export const getTheme = (path, defaultValue) =>
  */
 export const fromProps = (propsName, defaultValue) =>
   (props) => {
-    const propValue = _.get(props, propsName, defaultValue);
-    return _.get(props, `theme.${propsName}.${propValue}`, propValue);
+    const propsValue = _.get(props, propsName, defaultValue);
+    return _.get(props, `theme.${propsName}.${propsValue}`, propsValue);
   };
 
 /**
