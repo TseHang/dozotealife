@@ -40,7 +40,6 @@ const Figure = styled.figure`
   width: 100%;
   height: 82vh;
   filter: ${props => (props.loading ? 'blur(5px)' : 'none')};
-  /* filter: blur(5px); */
   ${media('pad')} {
     height: 30vh;
   }
@@ -134,7 +133,7 @@ class Slider extends PureComponent {
 
     this.setState(
       { activeSlideIdx: next, lastSlideIdx: current, description: slides[next].description },
-      () => { this.timer = setTimeout(this.slide, 5000); },
+      () => { this.timer = setTimeout(this.slide, this.SLIDER_INTERVAL); },
     );
   }
 
@@ -143,12 +142,15 @@ class Slider extends PureComponent {
     clearTimeout(this.timer);
     this.setState(
       { activeSlideIdx: activeIdx, lastSlideIdx: current, description: slides[activeIdx].description },
-      // () => { this.timer = setTimeout(this.slide, 8000); }, // Cuz it's chosen by user, so the timer is longer
+      // Cuz it's chosen by user, so the timer is longer
+      () => { this.timer = setTimeout(this.slide, this.SLIDER_WATCH); },
     );
   }
 
   timer = 0;
   image = new Image();
+  SLIDER_INTERVAL = 5000;
+  SLIDER_WATCH = 8000;
 
   renderSlideImg() {
     const { activeSlideIdx, lastSlideIdx } = this.state;
@@ -165,7 +167,9 @@ class Slider extends PureComponent {
 
   renderDots() {
     const { activeSlideIdx } = this.state;
-    return slides.map((el, idx) => <Dot key={`dot-${idx}`} onClick={this.selectSlide(idx)} active={idx === activeSlideIdx} />);
+    return slides.map(
+      (el, idx) => <Dot key={`dot-${idx}`} onClick={this.selectSlide(idx)} active={idx === activeSlideIdx} />
+    );
   }
 
   render() {
