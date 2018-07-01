@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import { number, shape, string, func, oneOfType } from 'prop-types';
 
@@ -36,22 +36,43 @@ const transformPosition = (key) => {
   }
 };
 
-const SliderDescription = ({
-  slideKey,
-  description,
-}) => (
-  <Container {...transformPosition(slideKey, description)}>
-    <Title>{description.title}</Title>
-    <Text>{showI18n(description.text)}</Text>
-  </Container>
-);
+class SliderDescription extends PureComponent {
+  static propTypes = {
+    slideKey: number,
+    description: shape({
+      title: string,
+      text: oneOfType([string, func]),
+    }),
+  }
 
-SliderDescription.propTypes = {
-  slideKey: number,
-  description: shape({
-    title: string,
-    text: oneOfType([string, func]),
-  }),
-};
+  static getDerivedStateFromProps(nextProps, state) {
+    if (nextProps.slideKey !== state.slideKey) {
+      return nextProps;
+    }
+    return false;
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      slideKey: props.slideKey,
+      description: {
+        title: props.description.title,
+        text: props.description.text,
+      },
+    };
+  }
+
+  render() {
+    const { slideKey, description } = this.state;
+    return (
+      <Container {...transformPosition(slideKey, description)}>
+        <Title>{description.title}</Title>
+        <Text>{showI18n(description.text)}</Text>
+      </Container>
+    );
+  }
+}
+
 
 export default SliderDescription;

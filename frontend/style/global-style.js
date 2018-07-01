@@ -41,6 +41,11 @@ injectGlobal`
     margin: 0.67em 0;
   }
 
+  h2 {
+    letter-spacing: 2px;
+    font-size: 1.5em;
+  }
+
   ol, ul {
     list-style: none;
   }

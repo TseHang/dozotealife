@@ -7,10 +7,12 @@ export const Row = styled.div`
   flex-wrap: wrap;
   margin: 0 ${getTheme('layout.left')};
   align-items: ${props => (props.inline ? 'center' : 'inherit')};
+  justify-content: ${props => (props.center ? 'center' : 'flex-start')};
 `;
 
 Row.propTypes = {
   inline: bool,
+  center: bool,
 };
 
 export const Block = styled.div`
