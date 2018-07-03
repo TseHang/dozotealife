@@ -12,7 +12,7 @@ import slideImg4 from '~/assets/img/slide-4.jpg';
 
 import { i18nString } from '@/i18n';
 
-import Description from './SliderDescription';
+import Description from './components/SliderDescription';
 
 const slidesString = i18nString('slides');
 
