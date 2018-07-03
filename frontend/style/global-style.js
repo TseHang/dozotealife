@@ -2,7 +2,10 @@ import { injectGlobal } from 'styled-components';
 
 // Customized normalize
 /* eslint no-unused-expressions: 0 */
+
 injectGlobal`
+  @import url('https://fonts.googleapis.com/css?family=Yellowtail');
+  
   html, body, div, span, p,
   h1, h2, h3, h4, h5, h6,
   a, img,

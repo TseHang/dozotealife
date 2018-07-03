@@ -12,9 +12,14 @@ import { showI18n } from '@/i18n';
 import linkIcon from '~/assets/Icon/link.svg';
 
 
+const Wrapper = styled.div`
+  padding-bottom: 2%;
+  margin-bottom: 5%;
+  border-bottom: ${getTheme('color.gray')} 1px solid;
+`;
+
 const Row = styled(row)`
   margin: 0;
-  margin-bottom: 3%;
 `;
 
 const Title = styled.h2`
@@ -53,12 +58,10 @@ const Div = styled.div`
 `;
 
 const Link = styled(link)`
-  position: absolute;
-  left: 1.5rem;
-  bottom: 10px;
-  max-width: 50px;
+  padding-left: 1.5rem;
+  width: 50px;
   svg {
-    width: 40%;
+    width: 1.5%;
   }
   &:hover {
     rect {
@@ -73,19 +76,21 @@ const Card = ({
   context,
   img,
 }) => (
-  <Row>
-    <Div>
-      <Title color="orange">{title}</Title>
-      <SubTitle>{showI18n(subTitle)}</SubTitle>
-      <Context>{showI18n(context)}</Context>
-      <Link to="/product" >
-        <SVG src={linkIcon} />
-      </Link>
-    </Div>
-    <Div padding="0 1rem">
-      <Img src={img} />
-    </Div>
-  </Row>
+  <Wrapper>
+    <Row>
+      <Div>
+        <Title color="orange">{title}</Title>
+        <SubTitle>{showI18n(subTitle)}</SubTitle>
+        <Context>{showI18n(context)}</Context>
+      </Div>
+      <Div padding="0 1rem">
+        <Img src={img} />
+      </Div>
+    </Row>
+    <Link to="/product" >
+      <SVG src={linkIcon} />
+    </Link>
+  </Wrapper>
 );
 
 Card.propTypes = {

@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { i18nString } from '@/i18n';
-import test1 from '~/assets/img/test1.jpg';
-import test2 from '~/assets/img/test2.jpg';
+import img1 from '~/assets/img/news-1.png';
+import img2 from '~/assets/img/news-2.png';
 
 import Card from './components/Card';
 import Title from './components/Title';
@@ -23,8 +23,8 @@ const Wrapper = styled.div`
 const cards = newsString('configs').map((config, i) => {
   let img = null;
   switch (i) {
-    case 0: img = test1; break;
-    case 1: img = test2; break;
+    case 0: img = img1; break;
+    case 1: img = img2; break;
     default: break;
   }
 
