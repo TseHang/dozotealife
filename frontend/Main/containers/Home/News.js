@@ -1,25 +1,30 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { i18nString } from '@/i18n';
+import test1 from '~/assets/img/test1.jpg';
+import test2 from '~/assets/img/test2.jpg';
 
 import Card from './components/Card';
 import Title from './components/Title';
 
-const i18n = i18nString('news');
+const newsString = i18nString('news');
 
+const Div = styled.div`
+  margin-top: 3%;
+`;
 
 const Wrapper = styled.div`
   width: 80%;
-  margin: 0 auto;
+  margin: 3% auto;
 `;
 
 
-const cards = i18n('configs').map((config, i) => {
+const cards = newsString('configs').map((config, i) => {
   let img = null;
   switch (i) {
-    case 0: img = 1; break;
-    case 1: img = 2; break;
+    case 0: img = test1; break;
+    case 1: img = test2; break;
     default: break;
   }
 
@@ -36,12 +41,12 @@ const cards = i18n('configs').map((config, i) => {
 
 
 const News = () => (
-  <Fragment>
-    <Title title={i18n('title')} />
+  <Div>
+    <Title title={newsString('title')} />
     <Wrapper>
       {cards}
     </Wrapper>
-  </Fragment>
+  </Div>
 );
 
 export default News;
