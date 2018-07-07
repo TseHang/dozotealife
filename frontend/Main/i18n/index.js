@@ -19,8 +19,11 @@ function getString(key, defaultLang = DEFAULT_LANG) {
   return _.get(TRANSLATIONS, path, defaultValue);
 }
 
-export const i18nString = category =>
-  path => getString(`${category}.${path}`, 'zh-tw');
+export const i18nString = (category) => {
+  const result = getString(category, 'zh-tw');
+  if (typeof result === 'string') return result;
+  return path => getString(`${category}.${path}`, 'zh-tw');
+};
 
 /**
  * @param { string } i18n - string, function, object
