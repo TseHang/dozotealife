@@ -82,7 +82,7 @@ export default {
   },
   spirit: {
     title: '品牌精神',
-    section: {
+    spirits: {
       title: '一杯有溫度的茶，一段有溫度的時光',
       content: () => (
         <Fragment>
@@ -96,5 +96,19 @@ export default {
         </Fragment>
       ),
     },
+    sections: [
+      {
+        title: '安心',
+        content: '100% 台灣茶葉，不混茶',
+      },
+      {
+        title: '健康',
+        content: '自然農法，有機液肥',
+      },
+      {
+        title: '自在',
+        content: '茶生活，生活茶',
+      },
+    ],
   },
 };

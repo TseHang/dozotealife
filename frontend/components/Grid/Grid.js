@@ -5,7 +5,7 @@ import { getTheme } from '~/style/helper';
 export const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 ${getTheme('layout.left')};
+  margin: ${props => (props.full ? 0 : `0 ${props.theme.layout.left}`)};
   align-items: ${props => (props.inline ? 'center' : 'inherit')};
   justify-content: ${props => (props.center ? 'center' : 'flex-start')};
 `;
