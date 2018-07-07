@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { i18nString, showI18n } from '@/i18n';
 
@@ -9,8 +10,9 @@ import right from '~/assets/Icon/right.svg';
 import { Row } from '~/components/Grid/Grid';
 import { fromProps, getTheme } from '~/style/helper';
 
-import test1 from '~/assets/img/test1.jpg';
-import test2 from '~/assets/img/test2.jpg';
+import section1Img from '~/assets/img/section-1.jpg';
+import section2Img from '~/assets/img/section-2.jpg';
+import section3Img from '~/assets/img/section-3.jpg';
 
 import Title from './components/Title';
 import AnimationBlock from './components/AnimationBlock';
@@ -58,14 +60,23 @@ const spirits = [
   },
 ];
 
-const sectionsSrc = [test1, test2, test2];
+const sectionsSrc = [section1Img, section2Img, section3Img];
+const sectionsLinkPath = ['', '', ''];
 const sections = spiritString('sections').map(({ title, content }, i) => ({
   src: sectionsSrc[i],
+  to: sectionsLinkPath[i],
   title,
   content,
 }));
 
-const SectionImg = styled.div.attrs({
+const SectionContent = styled.div`
+  position: absolute;
+  bottom: 10%;
+  left: 10px;
+  transition: bottom .1s ease-in;
+`;
+
+const SectionImg = styled(Link).attrs({
   style: props => ({
     backgroundImage: `url(${props.src})`,
   }),
@@ -75,19 +86,19 @@ const SectionImg = styled.div.attrs({
   color: ${fromProps('color')};
   width: 30%;
   height: 200px;
+  opacity: 1;
   text-shadow: 2px 2px 5px ${getTheme('color.black')};
-`;
-
-const SectionTitle = styled.h2`
-  position: absolute;
-  bottom: 20%;
-  left: 15px;
-`;
-
-const SectionContent = styled.p`
-  position: absolute;
-  bottom: 10%;
-  left: 10px;
+  transition: opacity .2s linear;
+  &:link {
+    color: ${fromProps('color')};
+  }
+  &:hover {
+    cursor: pointer;
+    opacity: .8;
+    ${SectionContent} {
+      bottom: 13%;
+    }
+  }
 `;
 
 const Spirit = () => (
@@ -108,10 +119,12 @@ const Spirit = () => (
     }
     <FullRow full>
       {
-        sections.map(({ src, title, content }) => (
-          <SectionImg src={src} color="white" key={src}>
-            <SectionTitle>{title}</SectionTitle>
-            <SectionContent>{content}</SectionContent>
+        sections.map(({ src, title, content, to }) => (
+          <SectionImg src={src} color="white" key={src} to={to}>
+            <SectionContent>
+              <h2>{title}</h2>
+              <p>{content}</p>
+            </SectionContent>
           </SectionImg>
         ))
       }

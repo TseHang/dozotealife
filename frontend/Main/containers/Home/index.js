@@ -1,4 +1,6 @@
 import React from 'react';
+import Motto from '~/components/Paragraph/Motto';
+
 import PageTop from '@/components/PageTop';
 
 import Slider from './Slider';
@@ -13,6 +15,7 @@ const Home = () => (
     <Slider />
     <News />
     <Spirit />
+    <Motto>“我們承諾，打造每一杯好茶，創造每一天的好心情！”</Motto>
   </React.Fragment>
 );
 

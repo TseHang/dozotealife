@@ -27,6 +27,7 @@ const BottomLine = styled(LineAnimation)`
   height: 1px;
   width: 100%;
   bottom: 0px;
+  left: 0;
   transform: translateX(150%);
   animation: slide-in-down 2.5s 0.7s infinite;
   @keyframes slide-in-down {
