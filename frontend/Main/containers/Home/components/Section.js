@@ -30,7 +30,7 @@ const TextContainer = styled(Block)`
   background-color: white;
   border: solid 1px ${getTheme('color.gray')};
   transform: translateY(-7.5%);
-  transition: all .1s ease-in;
+  transition: all .15s ease-in;
 
   h2 {
     color: white;

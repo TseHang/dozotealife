@@ -1,37 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { Link as link } from 'react-router-dom';
 
-import { navConfig } from '../../config';
+import { Row } from '~/components/Grid/Grid';
+import { getTheme } from '~/style/helper';
 
 const Wrapper = styled.footer`  
-  color: #333;
-  width: 80%;
-  margin: 3% auto;
+  width: 100%;
+  margin-top: 3%;
+  padding: 1%;
   font-size: .8rem;
   text-align: center;
+  line-height: 1.5;
+  color: white;
+  background-color: ${getTheme('color.gray')};
 `;
 
-const LinksContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+const Link = styled(link)``;
 
-const Link = styled(NavLink)`
-  margin: 1rem 5%;
+const Divider = styled.div`
+  width: 1px;
+  height: 14px;
+  background-color: white;
+  margin: 0 2%;
 `;
-
-const renderLinks = () => navConfig.map(({ to, tagName }) =>
-  <Link key={tagName} to={to}>{tagName}</Link>
-);
 
 export default () => (
   <Wrapper>
+    <Row inline center>
+      <Link to="/about-us">關於我們</Link>
+      <Divider />
+      <Link to="mailto: dozotealife@gmail.com">
+        聯絡 Dozo
+      </Link>
+    </Row>
     <p>Copyright © 2018 Dozo Tea Life. All Rights Reserved.</p>
-    <hr />
-    <LinksContainer>
-      {renderLinks()}
-    </LinksContainer>
   </Wrapper>
 );
