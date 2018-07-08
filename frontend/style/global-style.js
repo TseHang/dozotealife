@@ -2,13 +2,16 @@ import { injectGlobal } from 'styled-components';
 
 // Customized normalize
 /* eslint no-unused-expressions: 0 */
+
 injectGlobal`
+  @import url('https://fonts.googleapis.com/css?family=Yellowtail');
+  
   html, body, div, span, p,
   h1, h2, h3, h4, h5, h6,
   a, img,
   ol, ul, li,
   form, label, input, textarea,
-  header, footer, nav {
+  header, footer, nav, figure {
     margin: 0;
     padding: 0;
     border: 0;
@@ -19,25 +22,31 @@ injectGlobal`
   html, input, button, select {
     font-size: 16px;
     font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif;
-  }
-
-  html[lang=ja] {
-    font-family: "Hiragino Kaku Gothic Pro", Osaka, Meiryo, "MS PGothic", Arial, sans-serif;
+    font-weight: 300;
   }
 
   html {
     line-height: 1.15; /* Correct the line height in all browsers. */
     -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. */
+    &[lang=ja] {
+      font-family: "Hiragino Kaku Gothic Pro", Osaka, Meiryo, "MS PGothic", Arial, sans-serif;
+    }
   }
 
   body {
-    background-color: '#F4F3F4';
+    background-color: #fff;
+    letter-spacing: 1px;
   }
 
   h1{
     letter-spacing: 4px;
     font-size: 2em;
     margin: 0.67em 0;
+  }
+
+  h2 {
+    letter-spacing: 2px;
+    font-size: 1.5em;
   }
 
   ol, ul {

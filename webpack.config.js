@@ -27,7 +27,7 @@ const env = NODE_ENV || 'development';
 
 module.exports = {
   entry: {
-    main: './frontend/Main/routes.js',
+    main: './frontend/Main/index.js',
   },
   output: {
     path: `${__dirname}/dist`,
