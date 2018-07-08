@@ -8,9 +8,7 @@ import Slider from './Slider';
 import News from './News';
 import Spirit from './Spirit';
 import Sections from './Sections';
-
-// import FullImageBlock from '@/components/Block/FullImgBlock';
-// import bg from '~/assets/img/bg.jpg';
+import Logo from './Logo';
 
 const Home = () => (
   <React.Fragment>
@@ -20,6 +18,7 @@ const Home = () => (
     <Spirit />
     <Motto>{i18nString('motto')}</Motto>
     <Sections />
+    <Logo />
   </React.Fragment>
 );
 
