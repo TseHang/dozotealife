@@ -10,9 +10,9 @@ import right from '~/assets/Icon/right.svg';
 import { Row } from '~/components/Grid/Grid';
 import { fromProps, getTheme } from '~/style/helper';
 
-import section1Img from '~/assets/img/section-1.jpg';
-import section2Img from '~/assets/img/section-2.jpg';
-import section3Img from '~/assets/img/section-3.jpg';
+import spirit1Img from '~/assets/img/spirit-1.jpg';
+import spirit2Img from '~/assets/img/spirit-2.jpg';
+import spirit3Img from '~/assets/img/spirit-3.jpg';
 
 import Title from './components/Title';
 import AnimationBlock from './components/AnimationBlock';
@@ -60,7 +60,7 @@ const spirits = [
   },
 ];
 
-const sectionsSrc = [section1Img, section2Img, section3Img];
+const sectionsSrc = [spirit1Img, spirit2Img, spirit3Img];
 const sectionsLinkPath = ['', '', ''];
 const sections = spiritString('sections').map(({ title, content }, i) => ({
   src: sectionsSrc[i],
