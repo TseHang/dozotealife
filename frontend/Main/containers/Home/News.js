@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { i18nString } from '@/i18n';
+import { media } from '~/style/helper';
 import img1 from '~/assets/img/news-1.png';
 import img2 from '~/assets/img/news-2.png';
 
@@ -17,6 +18,9 @@ const Div = styled.div`
 const Wrapper = styled.div`
   width: 80%;
   margin: 3% auto;
+  ${media('mobile')} {
+    width: 90%;
+  }
 `;
 
 

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { Block } from '~/components/Grid/Grid';
-import { getTheme } from '~/style/helper';
+import { getTheme, media } from '~/style/helper';
 
 const BgImg = styled.div.attrs({
   style: props => ({
@@ -35,6 +35,11 @@ const TextContainer = styled(Block)`
   h2 {
     color: white;
     font-size: 1.3rem;
+  }
+
+  ${media('pad')} {
+    width: 35%;
+    height: auto;
   }
 `;
 
@@ -70,6 +75,14 @@ const Wrapper = styled(Link)`
     ${Shadow} {
       display: flex;
       transform: translateY(-7.5%);
+    }
+  }
+
+  ${media('pad')} {
+    &:hover {
+      ${TextContainer} {
+        transform: translateX(-8px) translateY(0);
+      }
     }
   }
 `;

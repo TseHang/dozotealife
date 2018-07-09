@@ -62,6 +62,10 @@ const Link = styled(link)`
   width: 50px;
   svg {
     width: 1.5%;
+
+    ${media('pad')} {
+      width: 3.5%;
+    }
   }
   &:hover {
     rect {

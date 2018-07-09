@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { i18nString } from '@/i18n';
+import { media } from '~/style/helper';
 import section1Img from '~/assets/img/section-1.jpg';
 import section2Img from '~/assets/img/section-2.jpg';
 import section3Img from '~/assets/img/section-3.jpg';
@@ -23,6 +24,9 @@ const sections = i18n('sections').map((section, i) => ({
 
 const Wrapper = styled.div`
   margin: 5% 10%;
+  ${media('pad')} {
+    margin: 5% 0;
+  }
 `;
 
 const Sections = () => (
