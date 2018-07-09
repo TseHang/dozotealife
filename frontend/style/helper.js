@@ -24,7 +24,7 @@ export const fromProps = (propsName, defaultValue) =>
  * @param {string} displayWay 'max' or 'min'
  */
 export const media = (threshold, displayWay = 'max') => {
-  const breakpoint = `${breakpoints[threshold]}px`;
-  return `@media (${displayWay}-width: ${breakpoint})`;
+  const breakpoint = breakpoints[threshold];
+  return `@media (${displayWay}-width: ${breakpoint}px)`;
 };
 

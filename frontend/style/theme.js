@@ -15,7 +15,7 @@ export default {
     lightGreen: 'rgb(208, 216, 200)',
   },
   layout: {
-    top: '2%',
+    top: '3%',
     left: '2%',
     contentLeft: '8%',
   },

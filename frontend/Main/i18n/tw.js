@@ -61,15 +61,15 @@ export default {
         subTitle: '「復興茶藝，閃耀台灣」Dozo Tea 讓我們請你喝杯茶！',
         context: () => (
           <Fragment>
-            一心二葉 / 純手採茶 / 自然農法 / 有機液肥
+            把日月潭紅玉的香味解放出來，大家快手刀來看看吧！
             <br />
-            採摘 / 萎凋 / 揉捻 / 乾燥 / 精製
+            <a href="" target="_blank">募資網址</a>
           </Fragment>
         ),
       },
       {
         title: '嘖嘖，募資上線！',
-        subTitle: '「復興茶藝，閃耀台灣」Dozo Tea 讓我們請你喝杯茶！',
+        subTitle: '「復興茶藝，閃耀台灣」我們開始募資了！',
         context: () => (
           <Fragment>
             一心二葉 / 純手採茶 / 自然農法 / 有機液肥
