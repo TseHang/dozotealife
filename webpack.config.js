@@ -30,7 +30,7 @@ module.exports = {
     main: './frontend/Main/index.js',
   },
   output: {
-    path: `${__dirname}/dist`,
+    path: `${__dirname}/../prod-dozotealife/`,
     filename: 'index.bundle.js',
     chunkFilename: '[name].bundle.js',
   },
