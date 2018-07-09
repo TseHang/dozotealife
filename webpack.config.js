@@ -43,19 +43,18 @@ module.exports = {
     inline: true,
     hot: true,
     historyApiFallback: true,
-    // [TODO]: When use browserRouter
-    // proxy: {
-    //   '/': {
-    //     target: 'http://localhost:8081',
-    //     bypass(req) {
-    //       const { url, protocol, hostname } = req;
+    proxy: {
+      '/': {
+        target: 'http://localhost:8081',
+        bypass(req) {
+          const { url, protocol, hostname } = req;
 
-    //       if (url.startsWith('/assets/') && !url.includes('libs.dll')) {
-    //         return `${protocol}://${hostname}${url}`;
-    //       }
-    //     },
-    //   },
-    // },
+          if (url.startsWith('/assets/') && !url.includes('libs.dll')) {
+            return `${protocol}://${hostname}${url}`;
+          }
+        },
+      },
+    },
   },
   module: {
     rules: [

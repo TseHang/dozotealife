@@ -9,12 +9,12 @@ import subTitle from '~/assets/Logo/subLogo.svg';
 
 const SVG = styled(svg)`
   width: 15%;
-  margin: 2% auto;
+  margin: 0 auto;
 `;
 
 const SubTitle = styled.img`
   width: 20%;
-  margin: 0 auto;
+  margin: 2% auto 7%;
 `;
 
 const Logo = () => (
