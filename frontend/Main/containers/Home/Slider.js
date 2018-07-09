@@ -28,6 +28,7 @@ const slideIn = keyframes`
 `;
 
 const Row = styled(row)`
+  position: relative;
   padding: 0 2%;
   ${media('pad')} {
     margin: 0;
@@ -41,7 +42,7 @@ const Figure = styled.figure`
   height: 82vh;
   filter: ${props => (props.loading ? 'blur(5px)' : 'none')};
   ${media('pad')} {
-    height: 30vh;
+    height: 50vh;
   }
 `;
 
@@ -70,6 +71,9 @@ const DotRow = styled.div`
   right: 5%;
   width: 7%;
   z-index: 1;
+  ${media('pad')} {
+    width: 20%;
+  }
 `;
 
 const Dot = styled.div`
@@ -181,8 +185,8 @@ class Slider extends PureComponent {
           <DotRow>
             {this.renderDots()}
           </DotRow>
-          <Description description={description} slideKey={activeSlideIdx} />
         </Figure>
+        <Description description={description} slideKey={activeSlideIdx} />
       </Row>
     );
   }

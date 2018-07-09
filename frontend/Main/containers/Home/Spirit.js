@@ -8,7 +8,7 @@ import left from '~/assets/Icon/left.svg';
 import right from '~/assets/Icon/right.svg';
 
 import { Row } from '~/components/Grid/Grid';
-import { fromProps, getTheme } from '~/style/helper';
+import { fromProps, getTheme, media } from '~/style/helper';
 
 import spirit1Img from '~/assets/img/spirit-1.jpg';
 import spirit2Img from '~/assets/img/spirit-2.jpg';
@@ -50,6 +50,7 @@ const Logo = styled.p`
 `;
 
 const FullRow = styled(Row)`
+  flex-wrap: nowrap;
   justify-content: space-between;
 `;
 
@@ -98,6 +99,10 @@ const SectionImg = styled(Link).attrs({
     ${SectionContent} {
       bottom: 13%;
     }
+  }
+
+  ${media('pad')} {
+    width: 40%; 
   }
 `;
 

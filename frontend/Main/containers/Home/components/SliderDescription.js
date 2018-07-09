@@ -15,6 +15,13 @@ const Container = styled.figcaption`
 
   ${media('pad')} {
     position: static;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+
+    > h2 {
+      display: none;
+    }
   }
 `;
 
@@ -25,12 +32,12 @@ const Text = styled.p`
   padding-left: 5px;
 `;
 
-const transformPosition = (key) => {
+const transformPosition = (key, isPad) => {
   switch (key) {
-    case 0: return { left: '60%', top: '85%', color: 'white' };
-    case 1: return { left: '5%', top: '27%', color: 'white' };
-    case 2: return { left: '65%', top: '23%', color: 'black' };
-    case 3: return { left: '5%', top: '20%', color: 'black' };
+    case 0: return { left: '55%', top: '85%', color: isPad ? 'gray' : 'white' };
+    case 1: return { left: '5%', top: '27%', color: isPad ? 'gray' : 'white' };
+    case 2: return { left: '65%', top: '23%', color: isPad ? 'gray' : 'black' };
+    case 3: return { left: '5%', top: '20%', color: isPad ? 'gray' : 'black' };
     default:
       return { left: '5%', top: '20%', color: 'white' };
   }
@@ -60,13 +67,28 @@ class SliderDescription extends PureComponent {
         title: props.description.title,
         text: props.description.text,
       },
+      isPad: window.innerWidth <= 700,
     };
   }
 
+  componentDidMount() {
+    window.addEventListener('resize', this.onResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  onResize = () => {
+    this.setState({
+      isPad: window.innerWidth <= 700,
+    });
+  }
+
   render() {
-    const { slideKey, description } = this.state;
+    const { slideKey, description, isPad } = this.state;
     return (
-      <Container {...transformPosition(slideKey, description)}>
+      <Container {...transformPosition(slideKey, isPad)}>
         <Title>{description.title}</Title>
         <Text>{showI18n(description.text)}</Text>
       </Container>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { getTheme } from '~/style/helper';
+import { media, getTheme } from '~/style/helper';
 
 export default styled.div`
   color: ${getTheme('color.gray')};
@@ -9,5 +9,8 @@ export default styled.div`
   font-size: 1.5rem;
   letter-spacing: 4px;
   text-align: center;
+  ${media('pad')} {
+    margin: 25% 5%;
+  }
 `;
 
