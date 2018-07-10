@@ -17,6 +17,10 @@ const Bg = styled(Row)`
   ${media('pad')} {
     width: 30vw;
   }
+
+  ${media('mobile')} {
+    width: 50vw;
+  }
 `;
 
 

@@ -16,6 +16,9 @@ const Wrapper = styled.div`
   padding-bottom: 2%;
   margin-bottom: 5%;
   border-bottom: ${getTheme('color.gray')} 1px solid;
+  ${media('pad')} {
+    margin-bottom: 8%;
+  }
 `;
 
 const Row = styled(row)`
@@ -35,6 +38,9 @@ const SubTitle = styled.p`
 const Context = styled.p`
   padding-left: 1.5rem;
   line-height: 1.5;
+  ${media('mobile')} {
+    padding-left: 1rem;
+  }
 `;
 
 const Img = styled.img`

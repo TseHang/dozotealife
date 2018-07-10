@@ -23,6 +23,10 @@ const Container = styled.figcaption`
       display: none;
     }
   }
+
+  ${media('mobile')} {
+    height: 60px;
+  }
 `;
 
 const Title = styled.h2``;

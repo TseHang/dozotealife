@@ -13,6 +13,9 @@ const newsString = i18nString('news');
 
 const Div = styled.div`
   margin-top: 3%;
+  ${media('pad')} {
+    margin-top: 7%;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -20,6 +23,7 @@ const Wrapper = styled.div`
   margin: 3% auto;
   ${media('mobile')} {
     width: 90%;
+    margin-bottom: 6%;
   }
 `;
 

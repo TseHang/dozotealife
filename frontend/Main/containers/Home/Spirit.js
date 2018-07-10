@@ -52,6 +52,9 @@ const Logo = styled.p`
 const FullRow = styled(Row)`
   flex-wrap: nowrap;
   justify-content: space-between;
+  ${media('pad')} {
+    margin-top: 10%;
+  }
 `;
 
 const spirits = [
@@ -72,9 +75,12 @@ const sections = spiritString('sections').map(({ title, content }, i) => ({
 
 const SectionContent = styled.div`
   position: absolute;
-  bottom: 10%;
+  top: 60%;
   left: 10px;
   transition: bottom .1s ease-in;
+  ${media('mobile')} {
+    top: 50%;
+  }
 `;
 
 const SectionImg = styled(Link).attrs({
