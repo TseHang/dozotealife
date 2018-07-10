@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link as link } from 'react-router-dom';
 
 import { Row } from '~/components/Grid/Grid';
-import { getTheme } from '~/style/helper';
+import { getTheme, media } from '~/style/helper';
 
 const Wrapper = styled.footer`  
   width: 100%;
@@ -14,6 +14,9 @@ const Wrapper = styled.footer`
   line-height: 1.5;
   color: white;
   background-color: ${getTheme('color.gray')};
+  ${media('pad')} {
+    padding: 3% 1%;
+  }
 `;
 
 const Link = styled(link)``;
