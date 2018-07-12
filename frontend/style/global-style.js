@@ -1,4 +1,5 @@
 import { injectGlobal } from 'styled-components';
+import { media } from './helper';
 
 // Customized normalize
 /* eslint no-unused-expressions: 0 */
@@ -36,6 +37,10 @@ injectGlobal`
   body {
     background-color: #fff;
     letter-spacing: 1px;
+
+    ${media('pad')} {
+      font-size: .9rem;
+    }
   }
 
   h1{
@@ -47,6 +52,9 @@ injectGlobal`
   h2 {
     letter-spacing: 2px;
     font-size: 1.5em;
+    ${media('pad')} {
+      font-size: 1.3em;
+    }
   }
 
   ol, ul {

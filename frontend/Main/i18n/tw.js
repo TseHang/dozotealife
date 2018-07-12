@@ -58,16 +58,16 @@ export default {
     configs: [
       {
         title: '嘖嘖 x 募資上線',
-        subTitle: '「復興茶藝，閃耀台灣」Dozo Tea 讓我們請你喝杯茶！',
+        subTitle: '復興茶藝，閃耀台灣',
         context: () => (
           <Fragment>
-            Dozo 在嘖嘖上線了！ <br />
-            從一個懞懞懂懂對於茶文化什麼都不懂的毛頭小孩們也走到這一步了，請大家多多支持！
+            Dozo 終於在嘖嘖上線了（撒花） <br />
+            讓我們一起請你喝杯茶吧！
           </Fragment>
         ),
       },
       {
-        title: '元粹禮盒 x 一心茶罐 x 強勢登場',
+        title: '元粹禮盒 x 一心茶罐',
         subTitle: '玩轉你的茶品味',
         context: () => (
           <Fragment>

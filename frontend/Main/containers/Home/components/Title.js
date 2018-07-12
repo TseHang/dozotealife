@@ -19,7 +19,13 @@ const Bg = styled(Row)`
   }
 
   ${media('mobile')} {
-    width: 50vw;
+    width: 40vw;
+  }
+`;
+
+const Text = styled.h2`
+  ${media('pad')} {
+    font-size: 1.5em;
   }
 `;
 
@@ -29,7 +35,7 @@ const Title = ({
 }) => (
   <Row inline center>
     <Bg color={'green'} inline center>
-      <h2>{title}</h2>
+      <Text>{title}</Text>
     </Bg>
   </Row>
 );

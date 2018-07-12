@@ -81,7 +81,7 @@ const Dot = styled.div`
   width: .7rem;
   height: .7rem;
   border-radius: 50%;
-  background-color: ${props => (props.active ? '#fff' : '#ffffff80')};
+  background-color: ${props => (props.active ? '#fff' : '#ffffff66')};
   &:hover {
     background-color: #fff;
   }

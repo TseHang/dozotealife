@@ -22,6 +22,9 @@ const spiritString = i18nString('spirit');
 const Icon = styled.img`
   width: 10%;
   margin: 0 1rem;
+  ${media('pad')} {
+    display: none;
+  }
 `;
 
 const blockCss = css`
@@ -39,7 +42,6 @@ const blockCss = css`
 const SpiritsTitle = styled.h2`
   margin: 1rem 0;
   color: ${fromProps('color')};
-  font-size: 1.3rem;
 `;
 
 const Logo = styled.p`
