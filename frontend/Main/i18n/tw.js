@@ -57,24 +57,25 @@ export default {
     title: '最新消息',
     configs: [
       {
-        title: '嘖嘖，募資上線！',
+        title: '嘖嘖 x 募資上線',
         subTitle: '「復興茶藝，閃耀台灣」Dozo Tea 讓我們請你喝杯茶！',
         context: () => (
           <Fragment>
-            把日月潭紅玉的香味解放出來，大家快手刀來看看吧！
-            <br />
-            <a href="" target="_blank">募資網址</a>
+            Dozo 在嘖嘖上線了！ <br />
+            從一個懞懞懂懂對於茶文化什麼都不懂的毛頭小孩們也走到這一步了，請大家多多支持！
           </Fragment>
         ),
       },
       {
-        title: '嘖嘖，募資上線！',
-        subTitle: '「復興茶藝，閃耀台灣」我們開始募資了！',
+        title: '元粹禮盒 x 一心茶罐 x 強勢登場',
+        subTitle: '玩轉你的茶品味',
         context: () => (
           <Fragment>
-            一心二葉 / 純手採茶 / 自然農法 / 有機液肥
+            打造你的生活新品味
             <br />
-            採摘 / 萎凋 / 揉捻 / 乾燥 / 精製
+            一泡就是一罐，一次全心全意地喝茶
+            <br />
+            一心茶罐，你的生活重心！
           </Fragment>
         ),
       },

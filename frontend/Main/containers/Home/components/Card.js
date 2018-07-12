@@ -23,6 +23,7 @@ const Wrapper = styled.div`
 
 const Row = styled(row)`
   margin: 0;
+  margin-bottom: 3%;
 `;
 
 const Title = styled.h2`
@@ -31,16 +32,14 @@ const Title = styled.h2`
 `;
 
 const SubTitle = styled.p`
+  padding-left: .5rem;
   font-weight: 700;
   margin-bottom: .75rem;
 `;
 
 const Context = styled.p`
-  padding-left: 1.5rem;
+  padding-left: .5rem;
   line-height: 1.5;
-  ${media('mobile')} {
-    padding-left: 1rem;
-  }
 `;
 
 const Img = styled.img`
@@ -55,7 +54,7 @@ const Img = styled.img`
 
 const Div = styled.div`
   position: relative;
-  width: 50%;
+  width: 60%;
   padding: ${fromProps('padding')};
 
   ${media('pad')} {
@@ -63,8 +62,15 @@ const Div = styled.div`
   }
 `;
 
+const ImgDiv = Div.extend`
+  display: flex;
+  align-items: center;
+  width: 40%;
+`;
+
 const Link = styled(link)`
-  padding-left: 1.5rem;
+  margin-top: 10px;
+  padding-left: .5rem;
   width: 50px;
   svg {
     width: 1.5%;
@@ -93,9 +99,9 @@ const Card = ({
         <SubTitle>{showI18n(subTitle)}</SubTitle>
         <Context>{showI18n(context)}</Context>
       </Div>
-      <Div padding="0 1rem">
+      <ImgDiv padding="0 1rem">
         <Img src={img} />
-      </Div>
+      </ImgDiv>
     </Row>
     <Link to="/product" >
       <SVG src={linkIcon} />
