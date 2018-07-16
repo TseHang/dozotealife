@@ -80,6 +80,7 @@ const SectionContent = styled.div`
   top: 60%;
   left: 10px;
   transition: bottom .1s ease-in;
+  color: ${fromProps('color')};
   ${media('mobile')} {
     top: 50%;
   }
@@ -92,15 +93,11 @@ const SectionImg = styled(Link).attrs({
 })`
   position: relative;
   background: ${getTheme('color.gray')} no-repeat center/cover;
-  color: ${fromProps('color')};
   width: 30%;
   height: 200px;
   opacity: 1;
   text-shadow: 2px 2px 5px ${getTheme('color.black')};
   transition: opacity .2s linear;
-  &:link {
-    color: ${fromProps('color')};
-  }
   &:hover {
     cursor: pointer;
     opacity: .8;
@@ -133,8 +130,8 @@ const Spirit = () => (
     <FullRow full>
       {
         sections.map(({ src, title, content, to }) => (
-          <SectionImg src={src} color="white" key={src} to={to}>
-            <SectionContent>
+          <SectionImg src={src} key={src} to={to}>
+            <SectionContent color="white">
               <h2>{title}</h2>
               <p>{content}</p>
             </SectionContent>

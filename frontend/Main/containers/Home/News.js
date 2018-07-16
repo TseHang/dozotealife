@@ -30,9 +30,10 @@ const Wrapper = styled.div`
 
 const cards = newsString('configs').map((config, i) => {
   let img = null;
+  let to = '';
   switch (i) {
-    case 0: img = img1; break;
-    case 1: img = img2; break;
+    case 0: img = img1; to = '/product'; break;
+    case 1: img = img2; to = '/product'; break;
     default: break;
   }
 
@@ -43,6 +44,7 @@ const cards = newsString('configs').map((config, i) => {
       subTitle={config.subTitle}
       context={config.context}
       img={img}
+      to={to}
     />
   );
 });

@@ -5,25 +5,17 @@ import { Link as link } from 'react-router-dom';
 
 import { fromProps, media, getTheme } from '~/style/helper';
 import { Row as row } from '~/components/Grid/Grid';
-import SVG from '~/components/SVG';
 
 import { showI18n } from '@/i18n';
 
-import linkIcon from '~/assets/Icon/link.svg';
 
-
-const Wrapper = styled.div`
-  padding-bottom: 2%;
+const Row = styled(row)`
+  padding-bottom: 5%;
   margin-bottom: 5%;
   border-bottom: ${getTheme('color.gray')} 1px solid;
   ${media('pad')} {
     margin-bottom: 8%;
   }
-`;
-
-const Row = styled(row)`
-  margin: 0;
-  margin-bottom: 3%;
 `;
 
 const Title = styled.h2`
@@ -40,6 +32,7 @@ const SubTitle = styled.p`
 const Context = styled.p`
   padding-left: .5rem;
   line-height: 1.5;
+  margin-bottom: 1.5rem;
 `;
 
 const Img = styled.img`
@@ -69,20 +62,41 @@ const ImgDiv = Div.extend`
 `;
 
 const Link = styled(link)`
-  margin-top: 10px;
-  padding-left: .5rem;
-  width: 50px;
-  svg {
-    width: 1.5%;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin-left: .5rem;
+  padding: .3rem .6rem;
+  border-radius: 15px;
+  border: solid 1px ${getTheme('color.gray')};
+  background-color: transparent;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: ${getTheme('color.orange')};
+    animation: slideOut .3s forwards;
+    z-index: -1;
 
-    ${media('pad')} {
-      width: 3.5%;
+    @keyframes slideOut {
+      from { left: 0 }
+      to { left: 100%; }
     }
   }
+  
   &:hover {
-    rect {
-      fill: ${getTheme('color.orange')}
+    &:before {
+      left: -100%;
+      animation: slideIn .3s forwards;
+      @keyframes slideIn {
+        to { left: 0; }
+      }
     }
+
+    color: white;
+    border-color: ${getTheme('color.orange')};
   }
 `;
 
@@ -91,22 +105,21 @@ const Card = ({
   subTitle,
   context,
   img,
+  to,
 }) => (
-  <Wrapper>
-    <Row>
-      <Div>
-        <Title color="orange">{title}</Title>
-        <SubTitle>{showI18n(subTitle)}</SubTitle>
-        <Context>{showI18n(context)}</Context>
-      </Div>
-      <ImgDiv padding="0 1rem">
-        <Img src={img} />
-      </ImgDiv>
-    </Row>
-    <Link to="/product" >
-      <SVG src={linkIcon} />
-    </Link>
-  </Wrapper>
+  <Row>
+    <Div>
+      <Title color="orange">{title}</Title>
+      <SubTitle>{showI18n(subTitle)}</SubTitle>
+      <Context>{showI18n(context)}</Context>
+      <Link to={to} >
+        更多
+      </Link>
+    </Div>
+    <ImgDiv padding="0 1rem">
+      <Img src={img} />
+    </ImgDiv>
+  </Row>
 );
 
 Card.propTypes = {
@@ -114,6 +127,7 @@ Card.propTypes = {
   subTitle: oneOfType([string, func]),
   context: oneOfType([string, func]),
   img: string,
+  to: string,
 };
 
 export default Card;
