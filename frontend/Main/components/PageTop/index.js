@@ -5,7 +5,7 @@ import { bool, string } from 'prop-types';
 import { getTheme, media } from '~/style/helper';
 import { Row as row } from '~/components/Grid/Grid';
 
-import subLogo from '~/assets/Logo/subLogo.svg';
+import subLogo from '~/assets/Logo/subTitle.svg';
 import logoBg from '~/assets/Logo/logoBg.png';
 import logoRow from '~/assets/Logo/logo-row.png';
 
