@@ -1,5 +1,5 @@
 import React from 'react';
-import PageTop from '@/components/PageTop';
+import PageTop from '@/components/PageTop/PageTop';
 
 
 const KnowHow = () => (

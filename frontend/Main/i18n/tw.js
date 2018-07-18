@@ -133,4 +133,8 @@ export default {
       },
     ],
   },
+  story: {
+    slideTitle: '「一杯有溫度的茶，一段有溫度的時光」',
+    title: '故事',
+  },
 };

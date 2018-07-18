@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Title from '@/components/PageTop/Title';
+
 import { i18nString } from '@/i18n';
 import { media } from '~/style/helper';
 import img1 from '~/assets/img/news-1.png';
 import img2 from '~/assets/img/news-2.png';
 
 import Card from './components/Card';
-import Title from './components/Title';
 
 const newsString = i18nString('news');
 
