@@ -13,6 +13,8 @@ export default {
     gray: '#707070',
     navBgGray: 'rgb(211, 215, 222)',
     lightGreen: 'rgb(208, 216, 200)',
+    lightOrange: '#EBAE24',
+    bgLightOrange: 'rgba(235, 174, 36, .12)',
   },
   layout: {
     top: '2.5%',

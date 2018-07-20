@@ -52,6 +52,7 @@ const LeftLine = styled(LineAnimation)`
   height: 100%;
   width: 1px;
   left: 0;
+  top:0;
   transform: translateY(150%);
   animation: slide-in-left 2.5s 0.7s infinite;
   @keyframes slide-in-left {
@@ -87,6 +88,7 @@ const Wrapper = styled.div`
   &:hover {
     color: ${props => (props.mask ? props.theme.color.white : props.theme.color.black)};
     ${Mask} {
+      z-index: -1;
       left: -100%;
       animation: slideIn .5s forwards;
       @keyframes slideIn {
