@@ -16,7 +16,7 @@ import spirit1Img from '~/assets/img/spirit-1.jpg';
 import spirit2Img from '~/assets/img/spirit-2.jpg';
 import spirit3Img from '~/assets/img/spirit-3.jpg';
 
-import AnimationBlock from './components/AnimationBlock';
+import AnimationBlock from '~/components/Block/AnimationBlock';
 
 const spiritString = i18nString('spirit');
 

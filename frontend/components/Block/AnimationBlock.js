@@ -85,7 +85,7 @@ const Wrapper = styled.div`
   color: ${getTheme('color.black')};
 
   &:hover {
-    color: ${getTheme('color.white')};
+    color: ${props => (props.mask ? props.theme.color.white : props.theme.color.black)};
     ${Mask} {
       left: -100%;
       animation: slideIn .5s forwards;
@@ -113,8 +113,8 @@ const renderLines = (disabled) => {
 
 const AnimationBlock = ({
   css,
-  handleClick,
   color,
+  handleClick = () => {},
   disabled = false,
   mask = true,
   children,
