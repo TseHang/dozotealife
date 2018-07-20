@@ -4,8 +4,9 @@ import { bool, string } from 'prop-types';
 
 import { getTheme, media } from '~/style/helper';
 import { Row as row } from '~/components/Grid/Grid';
+import SVG from '~/components/SVG';
 
-import subLogo from '~/assets/Logo/subLogo.svg';
+import subLogo from '~/assets/Logo/subTitle.svg';
 import logoBg from '~/assets/Logo/logoBg.png';
 import logoRow from '~/assets/Logo/logo-row.png';
 
@@ -52,14 +53,21 @@ const Title = {
   `,
 };
 
-const SubTitle = styled.img`
+const SubTitleWrapper = styled.div`
   margin-left: auto;
   width: 17vw;
 
   ${media('pad')} {
     display: none;
   }
+
 `;
+
+const SubTitle = () => (
+  <SubTitleWrapper>
+    <SVG src={subLogo} />
+  </SubTitleWrapper>
+);
 
 
 const getComponent = title => (title ? <Title.Text>{title}</Title.Text> : <Title.Logo src={logoRow} />);
@@ -73,7 +81,7 @@ const PageTop = ({
       <Title.Bg src={logoBg} />
       {getComponent(title)}
     </Title.Container>
-    {subTitle && <SubTitle src={subLogo} />}
+    {subTitle && <SubTitle />}
   </Row>
 );
 

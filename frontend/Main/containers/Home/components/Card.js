@@ -4,7 +4,7 @@ import { string, func, oneOfType } from 'prop-types';
 
 import { fromProps, media, getTheme } from '~/style/helper';
 import { Row as row } from '~/components/Grid/Grid';
-import { RadiusButton } from '~/components/Button/Button';
+import Button from '~/components/Button/Button';
 
 import { showI18n } from '@/i18n';
 
@@ -73,9 +73,9 @@ const Card = ({
       <Title color="orange">{title}</Title>
       <SubTitle>{showI18n(subTitle)}</SubTitle>
       <Context>{showI18n(context)}</Context>
-      <RadiusButton to={to} >
+      <Button to={to} radius>
         更多
-      </RadiusButton>
+      </Button>
     </Div>
     <ImgDiv padding="0 1rem">
       <Img src={img} />

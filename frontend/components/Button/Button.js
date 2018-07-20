@@ -1,14 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { getTheme } from '~/style/helper';
 
-const RadiusButton = styled(Link)`
+const radiusCss = css`
+  border-radius: 15px;
+`;
+
+export default styled(Link)`
   display: inline-block;
   position: relative;
   overflow: hidden;
   margin-left: .5rem;
   padding: .3rem .6rem;
-  border-radius: 15px;
   border: solid 1px ${getTheme('color.gray')};
   background-color: transparent;
   &:before {
@@ -39,8 +42,6 @@ const RadiusButton = styled(Link)`
     color: white;
     border-color: ${getTheme('color.orange')};
   }
-`;
 
-export {
-  RadiusButton,
-};
+  ${props => props.radius && radiusCss};
+`;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Motto from '~/components/Paragraph/Motto';
 
-import PageTop from '@/components/PageTop';
+import PageTop from '@/components/PageTop/PageTop';
 import { i18nString } from '@/i18n';
 
 import Slider from './Slider';
