@@ -21,4 +21,7 @@ export default {
     left: '2%',
     contentLeft: '8%',
   },
+  infoColor: {
+    info: '#EB6624',
+  },
 };

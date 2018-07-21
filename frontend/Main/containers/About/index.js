@@ -5,42 +5,34 @@ import { Redirect } from 'react-router-dom';
 import SlideImg from '@/components/PageTop/SlideImg';
 import Title from '@/components/PageTop/Title';
 
-import LeftLineContent from '~/components/Paragraph/LineLeftContent';
 import { ContentTitle, Content } from '~/components/Paragraph/Paragraph';
-import Motto from '~/components/Paragraph/Motto';
+import InfoContent from '~/components/Paragraph/InfoContent';
 import AnimationButton from '~/components/Button/AnimationButton';
 
 import { media } from '~/style/helper';
 
 import { i18nString, showI18n } from '@/i18n';
 
-import sectionImg from '~/assets/img/section-story.jpg';
+import sectionImg from '~/assets/img/section-about.jpg';
 
-import Spirits from './Spirits';
-
-const storyString = i18nString('story');
+const aboutString = i18nString('about');
 
 const ContentWrapper = styled.div`
-  margin: 15% auto 10%;
-  width: 50%;
+  margin: 5% auto;
+  width: 65%;
 
   ${media('pad')} {
     width: 80%;
   }
 `;
 
-const ParagraphTitle = styled(ContentTitle)`
-  transform: translate(-20px, -100%);
+const ParagraphTitle = ContentTitle.extend`
+  margin-bottom: 3%;
 `;
 
 const LightContent = Content.extend`
-  margin: 10% auto 3%;
+  margin: 3% auto;
   padding: 2em 1.5em;
-  width: 50%;
-
-  ${media('pad')} {
-    width: 80%;
-  }
 `;
 
 
@@ -52,19 +44,21 @@ class Story extends PureComponent {
   render() {
     return this.state.redirect ? <Redirect to="/product" push /> : (
       <Fragment>
-        <SlideImg src={sectionImg} text={storyString('slideTitle')} backgroundPosition="center 30%" />
-        <Title title={storyString('title')} />
-        <Spirits content={storyString('spirits')} />
-        <Motto>{storyString('motto')}</Motto>
+        <SlideImg src={sectionImg} text={aboutString('slideTitle')} backgroundPosition="center 25%" />
+        <Title title={aboutString('title')} />
         <ContentWrapper>
-          <ParagraphTitle>起源</ParagraphTitle>
-          <LeftLineContent>
-            {showI18n(storyString('content'))}
-          </LeftLineContent>
+          <ParagraphTitle>{aboutString('mainTitle')}</ParagraphTitle>
+          <p>{aboutString('mainDescription')}</p>
+          <InfoContent infoColor="info">
+            {showI18n(aboutString('mainContent'))}
+          </InfoContent>
         </ContentWrapper>
-        <LightContent color="bgLightOrange" noBottomMargin>
-          {showI18n(storyString('subContent'))}
-        </LightContent>
+        <ContentWrapper>
+          <ParagraphTitle>{aboutString('teamTitle')}</ParagraphTitle>
+          <LightContent color="bgLightOrange" noBottomMargin>
+            {showI18n(aboutString('teamContent'))}
+          </LightContent>
+        </ContentWrapper>
         <AnimationButton
           color="orange"
           handleClick={this.goProduct}

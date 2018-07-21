@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 import { i18nString } from '@/i18n';
 import { media } from '~/style/helper';
-import section1Img from '~/assets/img/section-1.jpg';
-import section2Img from '~/assets/img/section-2.jpg';
-import section3Img from '~/assets/img/section-3.jpg';
-import section4Img from '~/assets/img/section-4.jpg';
+import section1Img from '~/assets/img/section-story.jpg';
+import section2Img from '~/assets/img/section-promise.jpg';
+import section3Img from '~/assets/img/section-product.jpg';
+import section4Img from '~/assets/img/section-know-how.jpg';
 
 import Section from './components/Section';
 

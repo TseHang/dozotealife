@@ -24,8 +24,8 @@ export const navConfigs = [
     text: navString('know-how.text'),
   },
   {
-    path: '/about-us',
-    label: navString('about-us.label'),
-    text: navString('about-us.text'),
+    path: '/about',
+    label: navString('about.label'),
+    text: navString('about.text'),
   },
 ];
