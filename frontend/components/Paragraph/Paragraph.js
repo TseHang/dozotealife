@@ -25,3 +25,10 @@ export const Content = styled.div`
 export const ContentTitle = styled.h2`
   color: ${getTheme('color.orange')};
 `;
+
+export const HandWriting = styled.div`
+  margin-left: auto;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-family: 'Yellowtail', cursive;
+  `;

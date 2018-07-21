@@ -5,6 +5,7 @@ import { func } from 'prop-types';
 import { showI18n } from '@/i18n';
 
 import { media, getTheme } from '~/style/helper';
+import { HandWriting } from '~/components/Paragraph/Paragraph';
 import AnimationBlock from '~/components/Block/AnimationBlock';
 
 import leftIcon from '~/assets/Icon/left.svg';
@@ -50,13 +51,6 @@ const blockCss = css`
   ${media('pad')} {
     width: 70%;
   }
-`;
-
-const HandWriting = styled.div`
-  margin-left: auto;
-  font-size: 1.1rem;
-  font-style: italic;
-  font-family: 'Yellowtail', cursive;
 `;
 
 const Spirits = ({
