@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import SlideImg from '@/components/PageTop/SlideImg';
 import Title from '@/components/PageTop/Title';
 
-import LeftLineContent from '~/components/Paragraph/LineLeftContent';
+import LineLeftContent from '~/components/Paragraph/LineLeftContent';
 import { ContentTitle, Content } from '~/components/Paragraph/Paragraph';
 import Motto from '~/components/Paragraph/Motto';
 import AnimationButton from '~/components/Button/AnimationButton';
@@ -58,9 +58,9 @@ class Story extends PureComponent {
         <Motto>{storyString('motto')}</Motto>
         <ContentWrapper>
           <ParagraphTitle>起源</ParagraphTitle>
-          <LeftLineContent>
+          <LineLeftContent>
             {showI18n(storyString('content'))}
-          </LeftLineContent>
+          </LineLeftContent>
         </ContentWrapper>
         <LightContent color="bgLightOrange" noBottomMargin>
           {showI18n(storyString('subContent'))}
