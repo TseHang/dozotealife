@@ -226,5 +226,7 @@ export default {
         </HandWriting>
       </Fragment>
     ),
+    address: '地址：新北市三重區重新路四段65號15樓',
+    mail: '信箱：tw18ruby@gmail.com',
   },
 };

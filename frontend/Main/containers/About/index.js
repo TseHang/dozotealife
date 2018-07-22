@@ -58,6 +58,8 @@ class Story extends PureComponent {
           <LightContent color="bgLightOrange" noBottomMargin>
             {showI18n(aboutString('teamContent'))}
           </LightContent>
+          <p>{aboutString('address')}</p>
+          <p>{aboutString('mail')}</p>
         </ContentWrapper>
         <AnimationButton
           color="orange"
