@@ -10,8 +10,10 @@ import InfoContent from '~/components/Paragraph/InfoContent';
 import LineLeftContent from '~/components/Paragraph/LineLeftContent';
 import Motto from '~/components/Paragraph/Motto';
 import AnimationButton from '~/components/Button/AnimationButton';
+import SelectImg from '~/components/Block/SelectImg';
 
 import sectionImg from '~/assets/img/section-promise.jpg';
+import sgsImg from '~/assets/img/sgs.png';
 
 import { media } from '~/style/helper';
 
@@ -56,7 +58,7 @@ class Promise extends PureComponent {
               {showI18n(promiseString('promiseContent'))}
             </InfoContent>
           </ContentWrapper>
-          {/* <SelectImg text="12" /> */}
+          <SelectImg src={sgsImg} description={promiseString('sgsImgDescription')} width="20%" />
           <Motto>{showI18n(promiseString('motto'))}</Motto>
           <ContentWrapper>
             <ParagraphLineTitle>{promiseString('seasonTitle')}</ParagraphLineTitle>
