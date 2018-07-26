@@ -26,7 +26,7 @@ const viewCss = css`
 
   > img {
     transition: all .3s linear;
-    margin: 3% auto 0;
+    margin: 3% auto .6em;
     height: 80%;
   }
 

@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import SlideImg from '@/components/PageTop/SlideImg';
 import Title from '@/components/PageTop/Title';
 
+import { Row as row } from '~/components/Grid/Grid';
 import { ContentTitle } from '~/components/Paragraph/Paragraph';
 import InfoContent from '~/components/Paragraph/InfoContent';
 import LineLeftContent from '~/components/Paragraph/LineLeftContent';
@@ -12,10 +13,11 @@ import Motto from '~/components/Paragraph/Motto';
 import AnimationButton from '~/components/Button/AnimationButton';
 import SelectImg from '~/components/Block/SelectImg';
 
+import { media } from '~/style/helper';
+
 import sectionImg from '~/assets/img/section-promise.jpg';
 import sgsImg from '~/assets/img/sgs.png';
-
-import { media } from '~/style/helper';
+import teaGardenImg from '~/assets/img/spirit-2.jpg';
 
 import { i18nString, showI18n } from '@/i18n';
 
@@ -41,6 +43,14 @@ const ParagraphLineTitle = ContentTitle.extend`
   }
 `;
 
+const Row = row.extend`
+  ${media('pad')} {
+    > figure {
+      width: 100%;
+    }
+  }
+`;
+
 class Promise extends PureComponent {
   state = { redirect: false }
 
@@ -48,7 +58,7 @@ class Promise extends PureComponent {
 
   render() {
     return (
-      this.state.redirect ? <Redirect to="/product" /> : (
+      this.state.redirect ? <Redirect to="/product" push /> : (
         <Fragment>
           <SlideImg src={sectionImg} text={promiseString('slideTitle')} backgroundPosition="center 25%" />
           <Title title={promiseString('title')} />
@@ -67,7 +77,11 @@ class Promise extends PureComponent {
               {showI18n(promiseString('seasonContent'))}
             </LineLeftContent>
           </ContentWrapper>
-          {/* <SlideImg /> */}
+          <Row>
+            <SelectImg src={teaGardenImg} description={promiseString('sgsImgDescription')} width="30%" />
+            <SelectImg src={teaGardenImg} description={promiseString('sgsImgDescription')} width="30%" />
+            <SelectImg src={teaGardenImg} description={promiseString('sgsImgDescription')} width="30%" />
+          </Row>
           <AnimationButton
             color="orange"
             handleClick={this.goProduct}
