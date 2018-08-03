@@ -234,6 +234,9 @@ export default {
     title: 'Dozo 承諾',
     sgsImgDescription: 'SGS 無農藥殘留認證',
     promiseTitle: '三大承諾',
+    garden1ImgDescription: '滿滿一袋的茶，辛苦的阿姨叔叔們從一大早就開始採，目標是在中午前採完。',
+    garden2ImgDescription: '清晨 5 點鐘，雲霧繚繞的日月潭。',
+    garden3ImgDescription: '每一位都是當地經驗豐富的叔叔阿姨們，大家一呼百應，互相幫忙。',
     promiseContent: () => (
       <Fragment>
         <p>

@@ -17,7 +17,10 @@ import { media } from '~/style/helper';
 
 import sectionImg from '~/assets/img/section-promise.jpg';
 import sgsImg from '~/assets/img/sgs.png';
-import teaGardenImg from '~/assets/img/spirit-2.jpg';
+
+import teaGarden1Img from '~/assets/img/promise-garden-1.jpg';
+import teaGarden2Img from '~/assets/img/promise-garden-2.jpg';
+import teaGarden3Img from '~/assets/img/promise-garden-3.jpg';
 
 import { i18nString, showI18n } from '@/i18n';
 
@@ -78,9 +81,9 @@ class Promise extends PureComponent {
             </LineLeftContent>
           </ContentWrapper>
           <Row>
-            <SelectImg src={teaGardenImg} description={promiseString('sgsImgDescription')} width="30%" />
-            <SelectImg src={teaGardenImg} description={promiseString('sgsImgDescription')} width="30%" />
-            <SelectImg src={teaGardenImg} description={promiseString('sgsImgDescription')} width="30%" />
+            <SelectImg src={teaGarden1Img} description={promiseString('garden1ImgDescription')} width="30%" />
+            <SelectImg src={teaGarden2Img} description={promiseString('garden2ImgDescription')} width="30%" />
+            <SelectImg src={teaGarden3Img} description={promiseString('garden3ImgDescription')} width="30%" />
           </Row>
           <AnimationButton
             color="orange"

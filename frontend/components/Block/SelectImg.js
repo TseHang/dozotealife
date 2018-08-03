@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { string } from 'prop-types';
 import _ from 'lodash';
 
-import { getTheme, fromProps } from '~/style/helper';
+import { getTheme, fromProps, media } from '~/style/helper';
 
 const Bg = styled.div`
   display: none;
@@ -45,6 +45,11 @@ const Wrapper = styled.figure`
     cursor: pointer;
     margin-bottom: 5px;
   }
+
+  ${media('pad')} {
+    width: 70%;
+  }
+
   ${props => props.view && viewCss};
 `;
 
