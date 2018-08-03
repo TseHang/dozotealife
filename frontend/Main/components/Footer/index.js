@@ -31,7 +31,7 @@ const Divider = styled.div`
 export default () => (
   <Wrapper>
     <Row inline center>
-      <Link to="/about-us">關於我們</Link>
+      <Link to="/about">關於我們</Link>
       <Divider />
       <Link to="mailto: dozotealife@gmail.com">
         聯絡 Dozo
