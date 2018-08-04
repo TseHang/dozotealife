@@ -13,6 +13,7 @@ export const Row = styled.div`
 Row.propTypes = {
   inline: bool,
   center: bool,
+  full: bool,
 };
 
 export const Block = styled.div`
