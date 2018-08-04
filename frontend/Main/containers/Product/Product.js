@@ -4,17 +4,24 @@ import { string, arrayOf, shape, number, func, object } from 'prop-types';
 
 import { Row as row } from '~/components/Grid/Grid';
 
-import { getTheme, fromProps } from '~/style/helper';
+import { media, getTheme, fromProps } from '~/style/helper';
 
 const Wrapper = styled.div`
   width: 70%;
   height: 50%;
   margin: 3% auto;
+  ${media('pad')} {
+    width: 90%;
+    margin: 5% auto;
+  }
 `;
 
 const Title = styled.h2`
   color: ${getTheme('color.orange')};
   margin-bottom: 3%;
+  ${media('pad')} {
+    margin-top: 5%;
+  }
 `;
 
 const Img = styled.div`
@@ -37,26 +44,73 @@ const ActiveWrapper = styled.figure`
   > figcaption {
     margin-top: .5em;
   }
+
+  ${media('pad')} {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    > ${Img} {
+      max-height: 48vh;
+    }
+  }
+
+  ${media('mobile')} {
+    > ${Img} {
+      max-height: 45vh;
+    }
+  }
 `;
 
 const Details = styled.div`
   color: ${getTheme('color.gray')};
   font-size: .8em;
-  padding-left: 2%;
+  padding-right: 2%;
+  text-align: right;
 `;
 
 const ScrollWrapper = styled.div`
   width: 25%;
   padding: 0 3%;
   max-height: 65vh;
-  overflow-y: scroll;
+  overflow: scroll;
+  
   > ${Img} {
     margin-bottom: 8%;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  ${media('pad')} {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    width: 100%;
+    height: 20vh;
+    margin: 1em 0;
+    padding: 0;
+
+    > ${Img} {
+      width: 25%;
+      margin-right: 1em;
+      flex: 0 0 auto;
+    }
+  }
+
+  ${media('mobile')} {
+    > ${Img} {
+      width: 35%;
+      margin-bottom: 1em;
+    }
   }
 `;
 
 const Row = row.extend`
-  margin: 3% auto 1%;
+  margin: 3% 0 1%;
 `;
 
 
