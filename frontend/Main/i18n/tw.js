@@ -12,8 +12,8 @@ export default {
       text: '最用心的滋味，最健康的保證',
     },
     product: {
-      label: '找茶趣',
-      text: '玩轉茶藝，改變你的想像',
+      label: '台灣紅玉',
+      text: '從雲霧繚繞中誕生的台灣香，改變你的想像',
     },
     'know-how': {
       label: '茶百科',
@@ -125,8 +125,8 @@ export default {
         text: '我們承諾，使用細心與愛心灌溉與照顧每一片茶葉，給您最健康與自然的安心保證。',
       },
       {
-        title: '找茶趣',
-        text: '這是我們推出的產品，每一道都有它獨特的韻味存在，歡迎一同品嚐。',
+        title: '台灣紅玉',
+        text: '這是我們精選的紅玉紅茶，擁有它獨特的韻味存在，歡迎一同品嚐。',
       },
       {
         title: '茶百科',
@@ -312,6 +312,11 @@ export default {
   product: {
     slideTitle: '「用心的每個步驟，最頂級的紅玉，生活處處享受」',
     title: '台灣紅玉',
+    motto: () => (
+      <Fragment>
+        “一杯用心的茶， 給你一段有溫度的時光”
+      </Fragment>
+    ),
     introduceContent: () => (
       <Fragment>
         <p>

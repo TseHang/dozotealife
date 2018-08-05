@@ -27,6 +27,7 @@ const Title = styled.h2`
 const Img = styled.div`
   width: 100%;
   height: ${fromProps('height')};
+  border: ${props => (props.border && `solid 2px ${props.theme.color.gray}`)};
   background: ${props => `url(${props.src})`} center no-repeat;
   background-size: ${fromProps('backgroundSize', 'contain')};
   transition: all .1s linear;
@@ -34,6 +35,7 @@ const Img = styled.div`
   ${props => !props.active && css`
     opacity: .4;
     cursor: pointer;
+    border: none;
   `};
 `;
 
@@ -63,16 +65,10 @@ const ActiveWrapper = styled.figure`
   }
 `;
 
-const Details = styled.div`
-  color: ${getTheme('color.gray')};
-  font-size: .8em;
-  padding-right: 2%;
-  text-align: right;
-`;
-
 const ScrollWrapper = styled.div`
-  width: 25%;
-  padding: 0 3%;
+  width: 20%;
+  margin: 0 auto;
+  padding: 0 1%;
   max-height: 65vh;
   overflow: scroll;
   
@@ -109,6 +105,13 @@ const ScrollWrapper = styled.div`
   }
 `;
 
+const Details = styled.div`
+  color: ${getTheme('color.gray')};
+  font-size: .8em;
+  padding-right: 2%;
+  text-align: right;
+`;
+
 const Row = row.extend`
   margin: 3% 0 1%;
 `;
@@ -139,6 +142,7 @@ const Product = ({
             backgroundSize="cover"
             active={idx === activeIdx}
             onClick={() => toggle(idx)}
+            border
           />
         ))}
       </ScrollWrapper>

@@ -7,6 +7,7 @@ import { i18nString, showI18n } from '@/i18n';
 
 import { ContentTitle, Content } from '~/components/Paragraph/Paragraph';
 import InfoContent from '~/components/Paragraph/InfoContent';
+import Motto from '~/components/Paragraph/Motto';
 import AnimationButton from '~/components/Button/AnimationButton';
 
 import { media } from '~/style/helper';
@@ -91,6 +92,8 @@ class ProductPage extends PureComponent {
             />
           ))
         }
+
+        <Motto>{showI18n(i18n('motto'))}</Motto>
 
         <AnimationButton
           color="orange"
