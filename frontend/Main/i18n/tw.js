@@ -16,7 +16,7 @@ export default {
       text: '從雲霧繚繞中誕生的台灣香，改變你的想像',
     },
     'know-how': {
-      label: '茶百科',
+      label: '紅茶小百科',
       text: '茶的千百萬姿態 / 日月潭紅茶',
     },
     about: {
@@ -129,7 +129,7 @@ export default {
         text: '這是我們精選的紅玉紅茶，擁有它獨特的韻味存在，歡迎一同品嚐。',
       },
       {
-        title: '茶百科',
+        title: '紅茶小百科',
         text: '你知道紅茶與綠茶的差別嗎？你聽過黑茶與白茶嗎？你知道你所喝的茶產地嗎？讓我們告訴您。',
       },
     ],
@@ -230,7 +230,7 @@ export default {
     mail: '信箱：tw18ruby@gmail.com',
   },
   promise: {
-    slideTitle: '用心的每個步驟，最頂級的紅玉，為你的健康把關',
+    slideTitle: '用心的每個步驟，從土地孕育而生的好味道，是我們堅守的原則',
     title: 'Dozo 承諾',
     sgsImgDescription: 'SGS 無農藥殘留認證',
     promiseTitle: '三大承諾',
@@ -310,7 +310,7 @@ export default {
     ),
   },
   product: {
-    slideTitle: '「用心的每個步驟，最頂級的紅玉，生活處處享受」',
+    slideTitle: '「觀其色、品其香、聞其味：最頂級的紅玉，生活處處享受」',
     title: '台灣紅玉',
     motto: () => (
       <Fragment>
@@ -422,5 +422,9 @@ export default {
         ],
       },
     ],
+  },
+  'know-how': {
+    slideTitle: '「從歷史出發，台茶的過去與由來」',
+    title: '紅茶小百科',
   },
 };

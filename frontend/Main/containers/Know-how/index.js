@@ -1,10 +1,13 @@
 import React from 'react';
-import PageTop from '@/components/PageTop/PageTop';
 
+import Title from '@/components/PageTop/Title';
+import { i18nString } from '@/i18n';
+
+const i18n = i18nString('know-how');
 
 const KnowHow = () => (
   <React.Fragment>
-    <PageTop title="茶百科" subTitle />
+    <Title title={i18n('title')} />
     <h1>know-how</h1>
   </React.Fragment>
 );
