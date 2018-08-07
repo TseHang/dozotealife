@@ -55,10 +55,8 @@ class ProductPage extends PureComponent {
   }
 
   setActiveImg = productNo => (imgNo) => {
-    console.log(productNo, imgNo);
     const active = [...this.state.activeList];
     active[productNo].activeIdx = imgNo;
-    console.log(active);
     this.setState({
       activeList: active,
     });
