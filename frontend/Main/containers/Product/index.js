@@ -95,7 +95,7 @@ class ProductPage extends PureComponent {
 
         <AnimationButton
           color="orange"
-          handleClick={() => window.open('https://www.dozotealife.com')} // [Todo] 放嘖嘖的網站
+          handleClick={() => window.open('https://www.zeczec.com/projects/dozotealife')} // [Todo] 放嘖嘖的網站
         >
             ~ 我要購買 ~
         </AnimationButton>

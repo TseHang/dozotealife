@@ -8,6 +8,7 @@ import { i18nString, showI18n } from '@/i18n';
 import LineLeftContent from '~/components/Paragraph/LineLeftContent';
 import InfoContent from '~/components/Paragraph/InfoContent';
 import { Content, ContentTitle } from '~/components/Paragraph/Paragraph';
+import Youtube from '~/components/Youtube/Youtube';
 
 import { media } from '~/style/helper';
 import sectionImg from '~/assets/img/section-know-how.jpg';
@@ -55,7 +56,9 @@ const KnowHow = () => (
         {showI18n(i18n('history'))}
       </LineLeftContent>
     </ContentWrapper>
-    {/* <Youtube /> */}
+    <ContentWrapper>
+      <Youtube src={'https://www.youtube.com/embed/MgphHyGgeQU'} />
+    </ContentWrapper>
     <ContentWrapper>
       <ParagraphTitle>{i18n('teaGoodTitle')}</ParagraphTitle>
       <InfoContent infoColor="info">

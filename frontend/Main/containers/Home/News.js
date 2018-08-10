@@ -33,8 +33,8 @@ const cards = newsString('configs').map((config, i) => {
   let img = null;
   let to = '';
   switch (i) {
-    case 0: img = img1; to = '/product'; break;
-    case 1: img = img2; to = '/product'; break;
+    case 0: img = img1; to = 'https://www.zeczec.com/projects/dozotealife'; break;
+    case 1: img = img2; to = ''; break;
     default: break;
   }
 
