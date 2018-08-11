@@ -19,7 +19,7 @@ const root = (
     <ScrollToTopRoute path="/promise" component={Promise} />
     <ScrollToTopRoute path="/product" component={Product} />
     <ScrollToTopRoute path="/know-how" component={KnowHow} />
-    <Route path="/about" component={About} />
+    <ScrollToTopRoute path="/about" component={About} />
 
     {/* when none of the above match, <NoMatch> will be rendered */}
     <Route component={NoMatch} />
