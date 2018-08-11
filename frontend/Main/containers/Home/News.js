@@ -31,10 +31,10 @@ const Wrapper = styled.div`
 
 const cards = newsString('configs').map((config, i) => {
   let img = null;
-  let to = '';
+  let handleClick = () => {};
   switch (i) {
-    case 0: img = img1; to = '/product'; break;
-    case 1: img = img2; to = '/product'; break;
+    case 0: img = img1; handleClick = () => window.open('https://www.zeczec.com/projects/dozotealife'); break;
+    case 1: img = img2; break;
     default: break;
   }
 
@@ -45,7 +45,7 @@ const cards = newsString('configs').map((config, i) => {
       subTitle={config.subTitle}
       context={config.context}
       img={img}
-      to={to}
+      handleClick={handleClick}
     />
   );
 });

@@ -55,10 +55,8 @@ class ProductPage extends PureComponent {
   }
 
   setActiveImg = productNo => (imgNo) => {
-    console.log(productNo, imgNo);
     const active = [...this.state.activeList];
     active[productNo].activeIdx = imgNo;
-    console.log(active);
     this.setState({
       activeList: active,
     });
@@ -97,7 +95,7 @@ class ProductPage extends PureComponent {
 
         <AnimationButton
           color="orange"
-          handleClick={() => window.open('https://www.dozotealife.com')} // [Todo] 放嘖嘖的網站
+          handleClick={() => window.open('https://www.zeczec.com/projects/dozotealife')} // [Todo] 放嘖嘖的網站
         >
             ~ 我要購買 ~
         </AnimationButton>

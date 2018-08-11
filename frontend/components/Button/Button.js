@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
 import { getTheme } from '~/style/helper';
 
 const radiusCss = css`
   border-radius: 15px;
 `;
 
-export default styled(Link)`
+export default styled.button`
   display: inline-block;
   position: relative;
+  cursor: pointer;
   overflow: hidden;
   margin-left: .5rem;
   padding: .3rem .6rem;

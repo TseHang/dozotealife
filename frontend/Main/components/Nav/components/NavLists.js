@@ -8,6 +8,7 @@ import { Row as raw, Block as block } from '~/components/Grid/Grid';
 
 import closeIcon from '~/assets/Icon/close.svg';
 import logoWithTitle from '~/assets/Logo/logoWithTitle.png';
+import cuteImg from '~/assets/img/cuteImg.svg';
 
 import { navConfigs } from '../config';
 
@@ -24,6 +25,7 @@ const Wrapper = styled.nav`
 `;
 
 const Row = styled(raw)`
+  flex-wrap: nowrap;
   height: ${fromProps('height')};
   background-color: ${fromProps('color')};
   justify-content: ${fromProps('justify')};
@@ -47,7 +49,8 @@ const HomeLogo = styled.img`
 `;
 
 const CuteImg = styled.img`
-  width: 50%;
+  width: 65%;
+  margin: auto;
   ${media('pad')} {
     display: none;
   }
@@ -86,7 +89,7 @@ const NavLists = ({
       </Link>
     </Row>
     <Row color="orange" height="88vh" justify="flex-end">
-      <CuteImg alt="cute-img" />
+      <CuteImg src={cuteImg} alt="cute-img" />
       <Block>
         {
           navConfigs.map(nav => (

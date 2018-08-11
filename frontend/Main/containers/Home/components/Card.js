@@ -66,14 +66,14 @@ const Card = ({
   subTitle,
   context,
   img,
-  to,
+  handleClick,
 }) => (
   <Row>
     <Div>
       <Title color="orange">{title}</Title>
       <SubTitle>{showI18n(subTitle)}</SubTitle>
       <Context>{showI18n(context)}</Context>
-      <Button to={to} radius>
+      <Button onClick={handleClick} radius>
         更多
       </Button>
     </Div>
@@ -88,7 +88,7 @@ Card.propTypes = {
   subTitle: oneOfType([string, func]),
   context: oneOfType([string, func]),
   img: string,
-  to: string,
+  handleClick: func,
 };
 
 export default Card;

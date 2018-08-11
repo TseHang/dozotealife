@@ -8,15 +8,17 @@ import Product from '@/containers/Product';
 import KnowHow from '@/containers/Know-how';
 import About from '@/containers/About';
 
+import ScrollToTopRoute from '~/components/Route/ScrollToTopRoute';
+
 const NoMatch = () => <div><h1>What are you fucking doing!!!</h1></div>;
 
 const root = (
   <Switch>
-    <Route exact path="/" component={Home} />
-    <Route path="/story" component={Story} />
-    <Route path="/promise" component={Promise} />
-    <Route path="/product" component={Product} />
-    <Route path="/know-how" component={KnowHow} />
+    <ScrollToTopRoute exact path="/" component={Home} />
+    <ScrollToTopRoute path="/story" component={Story} />
+    <ScrollToTopRoute path="/promise" component={Promise} />
+    <ScrollToTopRoute path="/product" component={Product} />
+    <ScrollToTopRoute path="/know-how" component={KnowHow} />
     <Route path="/about" component={About} />
 
     {/* when none of the above match, <NoMatch> will be rendered */}
