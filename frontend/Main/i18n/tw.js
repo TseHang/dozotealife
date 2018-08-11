@@ -30,7 +30,7 @@ export default {
       text: '寧靜 / 親切 / 無價的相聚時光',
     },
     {
-      title: '極致，日月潭紅玉紅茶',
+      title: '極品絕茗，日月潭紅玉紅茶',
       text: () => (
         <Fragment>
           茶湯如琥珀般鮮亮，配上淡淡薄荷與肉桂香
@@ -51,7 +51,7 @@ export default {
     },
     {
       title: '安心栽種，承諾自然',
-      text: '百分之百原葉茶葉、不混、不換茶，我們的「初心」與信守的諾言。',
+      text: '百分之百原葉茶葉、不混茶、不換茶，我們的「初心」與信守的諾言。',
     },
   ],
   news: {
@@ -476,6 +476,7 @@ export default {
         </p>
       </Fragment>
     ),
+    'video-description1': '傳說中神農的杯子里掉落了一片落葉，而從此這杯掉入了落葉的水就叫做「茶」...',
     teaGoodTitle: '喝茶的好處',
     teaGoodContent: () => (
       <Fragment>

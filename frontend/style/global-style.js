@@ -114,6 +114,12 @@ injectGlobal`
     -webkit-appearance: none;
   }
 
+  button {
+    &:focus {
+      outline: none;
+    }
+  }
+
   /**
   * 1. Add the correct box sizing in IE 10.
   * 2. Remove the padding in IE 10.

@@ -11,27 +11,35 @@ const Iframe = styled.iframe`
   }
 `;
 
+const Div = styled.div`
+  text-align: center;
+  font-size: .9em;
+`;
+
 const Youtube = ({
   src,
   width = '100%',
   height = '420',
-  ...props
+  text,
 }) => (
-  <Iframe
-    width={width}
-    height={height}
-    src={src}
-    frameBorder="0"
-    allow="autoplay; encrypted-media"
-    allowFullscreen
-    {...props}
-  />
+  <Div>
+    <Iframe
+      width={width}
+      height={height}
+      src={src}
+      frameBorder="0"
+      allow="autoplay; encrypted-media"
+      allowFullscreen
+    />
+    <p>{text}</p>
+  </Div>
 );
 
 Youtube.propTypes = {
   src: string,
   width: string,
   height: string,
+  text: string,
 };
 
 export default Youtube;
